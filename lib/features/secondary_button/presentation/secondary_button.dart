@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:munchkin_notebook1/core/ui/constants/app_colors.dart';
 
 class SecondaryButton extends StatelessWidget {
-  const SecondaryButton(this.text, {super.key});
+  const SecondaryButton({
+    super.key,
+    required this.text,
+    this.onPress,
+  });
 
   final String text;
+  final Function()? onPress;
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +18,7 @@ class SecondaryButton extends StatelessWidget {
         foregroundColor: AppColors.contentColor,
         textStyle: const TextStyle(fontSize: 18, fontFamily: 'Academy'),
       ),
-      onPressed: () {},
+      onPressed: onPress,
       child: Text(text),
     );
   }

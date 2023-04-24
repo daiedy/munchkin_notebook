@@ -9,8 +9,8 @@ class ImageWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Image.asset(
       path,
-      width: 200,
-      height: 200,
+      // fit: BoxFit.fill,
+      height: 160,
     );
   }
 }

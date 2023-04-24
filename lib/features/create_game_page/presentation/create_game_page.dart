@@ -2,9 +2,8 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:munchkin_notebook1/features/base_page/presentation/base_page.dart';
-import 'package:munchkin_notebook1/navigation/router.dart';
-import 'package:munchkin_notebook1/navigation/router.gr.dart';
-
+import 'package:munchkin_notebook1/features/image_widget/presentation/image_widget.dart';
+import '../../common_text/presentation/common_text.dart';
 import '../../primary_button/presentation/primary_button.dart';
 import '../../secondary_button/presentation/secondary_button.dart';
 
@@ -15,24 +14,28 @@ class CreateGamePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BasePage(
-        AppLocalizations.of(context)!.create_game_title,
-        Column(children: [
-          Image.asset(
-            AppLocalizations.of(context)!.wizard,
-            width: 148,
-            height: 160,
-          ),
+        title: AppLocalizations.of(context)!.create_game_title,
+        body: Column(children: [
+          ImageWidget(AppLocalizations.of(context)!.wizard),
           Padding(
-            padding: const EdgeInsets.only(top: 20, bottom: 20),
-            child: Text(AppLocalizations.of(context)!.create_game_text,
-                style: const TextStyle(fontSize: 18)),
-          )
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: CommonText(
+                AppLocalizations.of(context)!.create_game_text,
+              ))
         ]),
-        [
-          PrimaryButton(AppLocalizations.of(context)!.create_game_button, () {
-            AutoRouter.of(context).navigate(const MaxLevelRoute());
-          }),
-          SecondaryButton(AppLocalizations.of(context)!.game_exists_button)
-        ]);
+        actions: Column(
+          children: [
+            PrimaryButton(
+                text: AppLocalizations.of(context)!.create_game_button,
+                onPress: () {
+                  // TODO: Сделать роутинг на MaxLevel
+                }),
+            SecondaryButton(
+                text: AppLocalizations.of(context)!.game_exists_button,
+                onPress: () {
+                  // TODO: Сделать роутинг на JoinGame
+                })
+          ],
+        ));
   }
 }

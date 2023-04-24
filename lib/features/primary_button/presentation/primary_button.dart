@@ -2,10 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:munchkin_notebook1/core/ui/constants/app_colors.dart';
 
 class PrimaryButton extends StatelessWidget {
-  const PrimaryButton(this.text, this.onPress, {super.key});
+  const PrimaryButton({
+    super.key,
+    required this.text,
+    this.onPress,
+  });
 
   final String text;
-  final Function() onPress;
+  final Function()? onPress;
 
   @override
   Widget build(BuildContext context) {
