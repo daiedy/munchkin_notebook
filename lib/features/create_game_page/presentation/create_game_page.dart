@@ -17,11 +17,9 @@ class CreateGamePage extends StatelessWidget {
         title: AppLocalizations.of(context)!.create_game_title,
         body: Column(children: [
           ImageWidget(AppLocalizations.of(context)!.wizard),
-          Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: CommonText(
-                AppLocalizations.of(context)!.create_game_text,
-              ))
+          CommonText(
+            AppLocalizations.of(context)!.create_game_text,
+          )
         ]),
         actions: Column(
           children: [
