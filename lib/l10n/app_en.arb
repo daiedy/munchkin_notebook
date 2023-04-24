@@ -1,0 +1,11 @@
+{
+    "helloWorld": "New World!",
+    "secondPage": "SecondPage",
+    "kiwi": "assets/images/kiwi.png",
+    "wizard": "assets/images/wizard.png",
+    "create_game_text": "Создай новую игру, пригласи боевых товарищей и начинай исследовать пещеры, драться с монстрами, добывать сокровища и зарабатывать опыт. Даже если за всю компанию считаешь очки ты один - игру надо создать.",
+    "create_game_title": "Создать игру",
+    "create_game_button": "Создать игру",
+    "game_exists_button": "Игра уже создана?"
+
+}
