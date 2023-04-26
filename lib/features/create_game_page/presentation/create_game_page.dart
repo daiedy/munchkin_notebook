@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:munchkin_notebook1/features/base_page/presentation/base_page.dart';
 import 'package:munchkin_notebook1/features/image_widget/presentation/image_widget.dart';
+import '../../../navigation/router.gr.dart';
 import '../../common_text/presentation/common_text.dart';
 import '../../primary_button/presentation/primary_button.dart';
 import '../../secondary_button/presentation/secondary_button.dart';
@@ -26,7 +27,7 @@ class CreateGamePage extends StatelessWidget {
             PrimaryButton(
                 text: AppLocalizations.of(context)!.create_game_button,
                 onPress: () {
-                  // TODO: Сделать роутинг на MaxLevel
+                 AutoRouter.of(context).navigate(const MaxLevelRoute());
                 }),
             SecondaryButton(
                 text: AppLocalizations.of(context)!.game_exists_button,
