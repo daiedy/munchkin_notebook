@@ -7,5 +7,6 @@ class AppRouter extends $AppRouter {
   List<AutoRoute> get routes => [
         AutoRoute(page: CreateGameRoute.page),
         AutoRoute(page: MaxLevelRoute.page),
+        AutoRoute(page: SelfCountingRoute.page),
       ];
 }

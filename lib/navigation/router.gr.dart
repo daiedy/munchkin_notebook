@@ -11,7 +11,7 @@
 import 'package:auto_route/auto_route.dart' as _i3;
 import 'package:munchkin_notebook1/features/create_game_page/presentation/create_game_page.dart'
     as _i1;
-import 'package:munchkin_notebook1/features/max_level_page/presentation/max_level_page.dart'
+import 'package:munchkin_notebook1/features/self_counting/presentation/self_counting.dart'
     as _i2;
 
 abstract class $AppRouter extends _i3.RootStackRouter {
@@ -25,10 +25,10 @@ abstract class $AppRouter extends _i3.RootStackRouter {
         child: const _i1.CreateGamePage(),
       );
     },
-    MaxLevelRoute.name: (routeData) {
+    SelfCountingRoute.name: (routeData) {
       return _i3.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i2.MaxLevelPage(),
+        child: const _i2.SelfCountingPage(),
       );
     },
   };
@@ -49,15 +49,15 @@ class CreateGameRoute extends _i3.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i2.MaxLevelPage]
-class MaxLevelRoute extends _i3.PageRouteInfo<void> {
-  const MaxLevelRoute({List<_i3.PageRouteInfo>? children})
+/// [_i2.SelfCountingPage]
+class SelfCountingRoute extends _i3.PageRouteInfo<void> {
+  const SelfCountingRoute({List<_i3.PageRouteInfo>? children})
       : super(
-          MaxLevelRoute.name,
+          SelfCountingRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'MaxLevelRoute';
+  static const String name = 'SelfCountingRoute';
 
   static const _i3.PageInfo<void> page = _i3.PageInfo<void>(name);
 }
