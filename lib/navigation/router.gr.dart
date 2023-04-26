@@ -8,27 +8,43 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:auto_route/auto_route.dart' as _i3;
+import 'package:auto_route/auto_route.dart' as _i5;
 import 'package:munchkin_notebook1/features/create_game_page/presentation/create_game_page.dart'
     as _i1;
-import 'package:munchkin_notebook1/features/self_counting/presentation/self_counting.dart'
+import 'package:munchkin_notebook1/features/enter_code/presentation/enter_code.dart'
+    as _i3;
+import 'package:munchkin_notebook1/features/max_level_page/presentation/max_level_page.dart'
     as _i2;
+import 'package:munchkin_notebook1/features/self_counting/presentation/self_counting.dart'
+    as _i4;
 
-abstract class $AppRouter extends _i3.RootStackRouter {
+abstract class $AppRouter extends _i5.RootStackRouter {
   $AppRouter({super.navigatorKey});
 
   @override
-  final Map<String, _i3.PageFactory> pagesMap = {
+  final Map<String, _i5.PageFactory> pagesMap = {
     CreateGameRoute.name: (routeData) {
-      return _i3.AutoRoutePage<dynamic>(
+      return _i5.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i1.CreateGamePage(),
       );
     },
-    SelfCountingRoute.name: (routeData) {
-      return _i3.AutoRoutePage<dynamic>(
+    MaxLevelRoute.name: (routeData) {
+      return _i5.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i2.SelfCountingPage(),
+        child: const _i2.MaxLevelPage(),
+      );
+    },
+    EnterCodeRoute.name: (routeData) {
+      return _i5.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i3.EnterCodePage(),
+      );
+    },
+    SelfCountingRoute.name: (routeData) {
+      return _i5.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i4.SelfCountingPage(),
       );
     },
   };
@@ -36,8 +52,8 @@ abstract class $AppRouter extends _i3.RootStackRouter {
 
 /// generated route for
 /// [_i1.CreateGamePage]
-class CreateGameRoute extends _i3.PageRouteInfo<void> {
-  const CreateGameRoute({List<_i3.PageRouteInfo>? children})
+class CreateGameRoute extends _i5.PageRouteInfo<void> {
+  const CreateGameRoute({List<_i5.PageRouteInfo>? children})
       : super(
           CreateGameRoute.name,
           initialChildren: children,
@@ -45,13 +61,41 @@ class CreateGameRoute extends _i3.PageRouteInfo<void> {
 
   static const String name = 'CreateGameRoute';
 
-  static const _i3.PageInfo<void> page = _i3.PageInfo<void>(name);
+  static const _i5.PageInfo<void> page = _i5.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i2.SelfCountingPage]
-class SelfCountingRoute extends _i3.PageRouteInfo<void> {
-  const SelfCountingRoute({List<_i3.PageRouteInfo>? children})
+/// [_i2.MaxLevelPage]
+class MaxLevelRoute extends _i5.PageRouteInfo<void> {
+  const MaxLevelRoute({List<_i5.PageRouteInfo>? children})
+      : super(
+          MaxLevelRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'MaxLevelRoute';
+
+  static const _i5.PageInfo<void> page = _i5.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i3.EnterCodePage]
+class EnterCodeRoute extends _i5.PageRouteInfo<void> {
+  const EnterCodeRoute({List<_i5.PageRouteInfo>? children})
+      : super(
+          EnterCodeRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'EnterCodeRoute';
+
+  static const _i5.PageInfo<void> page = _i5.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i4.SelfCountingPage]
+class SelfCountingRoute extends _i5.PageRouteInfo<void> {
+  const SelfCountingRoute({List<_i5.PageRouteInfo>? children})
       : super(
           SelfCountingRoute.name,
           initialChildren: children,
@@ -59,5 +103,5 @@ class SelfCountingRoute extends _i3.PageRouteInfo<void> {
 
   static const String name = 'SelfCountingRoute';
 
-  static const _i3.PageInfo<void> page = _i3.PageInfo<void>(name);
+  static const _i5.PageInfo<void> page = _i5.PageInfo<void>(name);
 }
