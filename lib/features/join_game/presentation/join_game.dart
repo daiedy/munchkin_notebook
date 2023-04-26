@@ -29,7 +29,7 @@ class JoinGamePage extends StatelessWidget {
             PrimaryButton(
                 text: AppLocalizations.of(context)!.join_game_button,
                 onPress: () {
-                  //TODO: Сделать роутинг на страничку EnterCode
+                  AutoRouter.of(context).navigate(const EnterCodeRoute());
                 }),
             SecondaryButton(
                 text: AppLocalizations.of(context)!.game_not_created_button,

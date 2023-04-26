@@ -22,9 +22,7 @@ class EnterCodePage extends StatelessWidget {
           children: [
             PrimaryButton(
                 text: AppLocalizations.of(context)!.continue_button,
-                onPress: () {
-                  AutoRouter.of(context).navigate(const SelfCountingRoute());
-                }),
+                onPress: () {}),
             SecondaryButton(
                 text: AppLocalizations.of(context)!.back_to_start_button,
                 onPress: () {
