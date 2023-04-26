@@ -27,12 +27,12 @@ class CreateGamePage extends StatelessWidget {
             PrimaryButton(
                 text: AppLocalizations.of(context)!.create_game_button,
                 onPress: () {
-                 AutoRouter.of(context).navigate(const MaxLevelRoute());
+                  AutoRouter.of(context).navigate(const MaxLevelRoute());
                 }),
             SecondaryButton(
                 text: AppLocalizations.of(context)!.game_exists_button,
                 onPress: () {
-                  // TODO: Сделать роутинг на JoinGame
+                  AutoRouter.of(context).navigate(const JoinGameRoute());
                 })
           ],
         ));

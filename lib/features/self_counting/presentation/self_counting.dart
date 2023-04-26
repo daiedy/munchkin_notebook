@@ -28,14 +28,16 @@ class SelfCountingPage extends StatelessWidget {
           children: [
             PrimaryButton(
                 text: AppLocalizations.of(context)!.be_gamemaster_button,
-                onPress: () {
-                  // TODO: Сделать роутинг на страничку JoinGame
-                }),
-            SecondaryButton(
+                onPress: () {}),
+            PrimaryButton(
                 text: AppLocalizations.of(context)!.self_counting_button,
-                onPress: () {
-                  // TODO: Сделать роутинг на страничку MaxLevel
-                })
+                onPress: () {}),
+            SecondaryButton(
+              text: AppLocalizations.of(context)!.self_counting_button,
+              onPress: () {
+                AutoRouter.of(context).navigate(const MaxLevelRoute());
+              },
+            )
           ],
         ));
   }
