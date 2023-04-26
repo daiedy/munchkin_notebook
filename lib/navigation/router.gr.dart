@@ -11,7 +11,7 @@
 import 'package:auto_route/auto_route.dart' as _i5;
 import 'package:munchkin_notebook1/features/create_game_page/presentation/create_game_page.dart'
     as _i1;
-import 'package:munchkin_notebook1/features/enter_code/presentation/enter_code.dart'
+import 'package:munchkin_notebook1/features/join_game/presentation/join_game.dart'
     as _i3;
 import 'package:munchkin_notebook1/features/max_level_page/presentation/max_level_page.dart'
     as _i2;
@@ -35,10 +35,10 @@ abstract class $AppRouter extends _i5.RootStackRouter {
         child: const _i2.MaxLevelPage(),
       );
     },
-    EnterCodeRoute.name: (routeData) {
+    JoinGameRoute.name: (routeData) {
       return _i5.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i3.EnterCodePage(),
+        child: const _i3.JoinGamePage(),
       );
     },
     SelfCountingRoute.name: (routeData) {
@@ -79,15 +79,15 @@ class MaxLevelRoute extends _i5.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i3.EnterCodePage]
-class EnterCodeRoute extends _i5.PageRouteInfo<void> {
-  const EnterCodeRoute({List<_i5.PageRouteInfo>? children})
+/// [_i3.JoinGamePage]
+class JoinGameRoute extends _i5.PageRouteInfo<void> {
+  const JoinGameRoute({List<_i5.PageRouteInfo>? children})
       : super(
-          EnterCodeRoute.name,
+          JoinGameRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'EnterCodeRoute';
+  static const String name = 'JoinGameRoute';
 
   static const _i5.PageInfo<void> page = _i5.PageInfo<void>(name);
 }

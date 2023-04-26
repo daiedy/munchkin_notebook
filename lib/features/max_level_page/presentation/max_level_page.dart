@@ -1,10 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:munchkin_notebook1/core/ui/constants/app_colors.dart';
 import 'package:munchkin_notebook1/features/base_page/presentation/base_page.dart';
 import 'package:munchkin_notebook1/features/common_text/presentation/common_text.dart';
 import 'package:munchkin_notebook1/features/max_level_page/custom_clipper.dart';
+import 'package:munchkin_notebook1/features/max_level_page/presentation/triangle_container.dart';
 import 'package:munchkin_notebook1/features/primary_button/presentation/primary_button.dart';
 import 'package:munchkin_notebook1/features/secondary_button/presentation/secondary_button.dart';
 import 'package:munchkin_notebook1/navigation/router.gr.dart';
@@ -24,11 +24,7 @@ class MaxLevelPage extends StatelessWidget {
               ClipPath(
                 clipper: CustomTriangleClipper(
                     triangleDirection: TriangleDirection.left),
-                child: Container(
-                  width: 36,
-                  height: 40,
-                  color: AppColors.contentColor,
-                ),
+                child: const TriangleContainer(),
               ),
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20),
@@ -40,11 +36,7 @@ class MaxLevelPage extends StatelessWidget {
               ClipPath(
                 clipper: CustomTriangleClipper(
                     triangleDirection: TriangleDirection.right),
-                child: Container(
-                  width: 36,
-                  height: 40,
-                  color: AppColors.contentColor,
-                ),
+                child: const TriangleContainer(),
               ),
             ],
           ),
@@ -55,7 +47,7 @@ class MaxLevelPage extends StatelessWidget {
             PrimaryButton(
                 text: AppLocalizations.of(context)!.continue_button,
                 onPress: () {
-                  // TODO: Сделать роутинг в SelfCounting
+                  AutoRouter.of(context).navigate(const SelfCountingRoute());
                 }),
             SecondaryButton(
                 text: AppLocalizations.of(context)!.back_to_start_button,

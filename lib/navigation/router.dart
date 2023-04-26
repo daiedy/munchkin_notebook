@@ -9,5 +9,6 @@ class AppRouter extends $AppRouter {
         AutoRoute(page: MaxLevelRoute.page),
         AutoRoute(page: SelfCountingRoute.page),
         AutoRoute(page: EnterCodeRoute.page),
+        AutoRoute(page: JoinGameRoute.page),
       ];
 }
