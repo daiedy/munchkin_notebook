@@ -35,6 +35,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   intl: any
+  pinput: ^2.2.31
 
 dev_dependencies:
   auto_route_generator: ^6.2.0

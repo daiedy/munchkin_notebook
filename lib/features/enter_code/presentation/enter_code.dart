@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:munchkin_notebook1/features/base_page/presentation/base_page.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:munchkin_notebook1/features/common_text/presentation/common_text.dart';
+import 'package:munchkin_notebook1/features/enter_code/presentation/game_code_input.dart';
 import 'package:munchkin_notebook1/navigation/router.gr.dart';
 import '../../primary_button/presentation/primary_button.dart';
 import '../../secondary_button/presentation/secondary_button.dart';
@@ -16,6 +17,7 @@ class EnterCodePage extends StatelessWidget {
     return BasePage(
         title: AppLocalizations.of(context)!.enter_code_title,
         body: Column(children: [
+          const GameCodeInput(),
           CommonText(AppLocalizations.of(context)!.enter_code_text)
         ]),
         actions: Column(
