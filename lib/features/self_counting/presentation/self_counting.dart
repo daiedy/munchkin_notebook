@@ -28,10 +28,14 @@ class SelfCountingPage extends StatelessWidget {
           children: [
             PrimaryButton(
                 text: AppLocalizations.of(context)!.be_gamemaster_button,
-                onPress: () {}),
+                onPress: () {
+                  AutoRouter.of(context).navigate(const EnterNameRoute());
+                }),
             PrimaryButton(
                 text: AppLocalizations.of(context)!.self_counting_button,
-                onPress: () {}),
+                onPress: () {
+                  AutoRouter.of(context).navigate(const EnterNameRoute());
+                }),
             SecondaryButton(
               text: AppLocalizations.of(context)!.self_counting_button,
               onPress: () {

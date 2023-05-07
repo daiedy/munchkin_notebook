@@ -18,5 +18,7 @@
     "join_game_title": "Присоединиться к игре",
     "join_game_text": "Кто-то уже ведёт вашу компанию по дороге приключений? Скорее присоединяйся и покажи всем, кто здесь настоящий манчкин!",
     "join_game_button": "Присоединиться к игре",
-    "game_not_created_button": "Игра ещё не создана?"
+    "game_not_created_button": "Игра ещё не создана?",
+    "enter_name_title": "Введите имя манчкина",
+    "chikibryak": "assets/images/chikibryak.png"
 }
