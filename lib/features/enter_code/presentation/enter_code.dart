@@ -9,18 +9,33 @@ import '../../primary_button/presentation/primary_button.dart';
 import '../../secondary_button/presentation/secondary_button.dart';
 
 @RoutePage()
-class EnterCodePage extends StatelessWidget {
-  EnterCodePage({super.key});
+class EnterCodePage extends StatefulWidget {
+  const EnterCodePage({super.key});
 
-  final TextEditingController gameCodeController = TextEditingController();
+  @override
+  State<EnterCodePage> createState() => _EnterCodePageState();
+}
+
+class _EnterCodePageState extends State<EnterCodePage> {
+  final TextEditingController _gameCodeController = TextEditingController();
+
+  @override
+  void dispose() {
+    _gameCodeController.dispose();
+
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return BasePage(
         title: AppLocalizations.of(context)!.enter_code_title,
         body: Column(children: [
-          GameCodeInput(
-            gameCodeController: gameCodeController,
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 40),
+            child: GameCodeInput(
+              gameCodeController: _gameCodeController,
+            ),
           ),
           CommonText(AppLocalizations.of(context)!.enter_code_text)
         ]),
