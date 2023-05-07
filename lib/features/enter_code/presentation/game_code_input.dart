@@ -46,11 +46,13 @@ class _GameCodeInputState extends State<GameCodeInput> {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 40),
       child: Pinput(
-          controller: widget.gameCodeController,
-          cursor: cursor,
-          defaultPinTheme: defaultPinTheme,
-          focusedPinTheme: focusedPinTheme,
-          length: 5),
+        controller: widget.gameCodeController,
+        cursor: cursor,
+        defaultPinTheme: defaultPinTheme,
+        focusedPinTheme: focusedPinTheme,
+        length: 5,
+        keyboardType: TextInputType.number,
+      ),
     );
   }
 }
