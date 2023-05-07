@@ -17,20 +17,13 @@ class EnterNamePage extends StatefulWidget {
 }
 
 class _EnterNamePageState extends State<EnterNamePage> {
-  String name = '';
   TextEditingController nameController = TextEditingController();
 
   @override
-  void initState() {
-    super.initState();
+  void dispose() {
+    nameController.dispose();
 
-    nameController.addListener(setName);
-  }
-
-  void setName() {
-    setState(() {
-      name = nameController.text;
-    });
+    super.dispose();
   }
 
   @override
@@ -44,13 +37,16 @@ class _EnterNamePageState extends State<EnterNamePage> {
             child: TextFormField(
                 controller: nameController,
                 decoration: InputDecoration(
-                    border: const UnderlineInputBorder(
-                        borderSide: BorderSide(color: AppColors.contentColor)),
+                    enabledBorder: const UnderlineInputBorder(
+                        borderSide: BorderSide(
+                            color: AppColors.contentColor, width: 3)),
                     focusedBorder: const UnderlineInputBorder(
-                        borderSide: BorderSide(color: AppColors.contentColor)),
+                        borderSide: BorderSide(
+                            color: AppColors.contentColor, width: 5)),
                     hintText: AppLocalizations.of(context)!.enter_name_title),
                 textAlign: TextAlign.center,
-                style: const TextStyle(fontSize: 30)),
+                cursorColor: AppColors.contentColor,
+                style: const TextStyle(fontSize: 36)),
           )
         ]),
         actions: Column(
