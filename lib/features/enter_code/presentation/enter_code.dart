@@ -12,7 +12,7 @@ import '../../secondary_button/presentation/secondary_button.dart';
 class EnterCodePage extends StatelessWidget {
   EnterCodePage({super.key});
 
-  TextEditingController gameCodeController = TextEditingController();
+  final TextEditingController gameCodeController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:munchkin_notebook1/core/ui/constants/app_colors.dart';
 import 'package:pinput/pinput.dart';
 
@@ -52,6 +53,7 @@ class _GameCodeInputState extends State<GameCodeInput> {
         focusedPinTheme: focusedPinTheme,
         length: 5,
         keyboardType: TextInputType.number,
+        inputFormatters: [FilteringTextInputFormatter.digitsOnly],
       ),
     );
   }
