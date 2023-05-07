@@ -10,21 +10,27 @@ import '../../secondary_button/presentation/secondary_button.dart';
 
 @RoutePage()
 class EnterCodePage extends StatelessWidget {
-  const EnterCodePage({super.key});
+  EnterCodePage({super.key});
+
+  TextEditingController gameCodeController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return BasePage(
         title: AppLocalizations.of(context)!.enter_code_title,
         body: Column(children: [
-          const GameCodeInput(),
+          GameCodeInput(
+            gameCodeController: gameCodeController,
+          ),
           CommonText(AppLocalizations.of(context)!.enter_code_text)
         ]),
         actions: Column(
           children: [
             PrimaryButton(
                 text: AppLocalizations.of(context)!.continue_button,
-                onPress: () {}),
+                onPress: () {
+                  //TODO: add routing to enter_name
+                }),
             SecondaryButton(
                 text: AppLocalizations.of(context)!.back_to_start_button,
                 onPress: () {

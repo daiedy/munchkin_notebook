@@ -3,36 +3,15 @@ import 'package:munchkin_notebook1/core/ui/constants/app_colors.dart';
 import 'package:pinput/pinput.dart';
 
 class GameCodeInput extends StatefulWidget {
-  const GameCodeInput({super.key});
+  const GameCodeInput({super.key, required this.gameCodeController});
+
+  final TextEditingController gameCodeController;
 
   @override
   State<GameCodeInput> createState() => _GameCodeInputState();
 }
 
 class _GameCodeInputState extends State<GameCodeInput> {
-  TextEditingController gameCodeController = TextEditingController();
-  String gameCode = '';
-
-  @override
-  void dispose() {
-    gameCodeController.dispose();
-
-    super.dispose();
-  }
-
-  @override
-  void initState() {
-    super.initState();
-
-    gameCodeController.addListener(changeGameCode);
-  }
-
-  void changeGameCode() {
-    setState(() {
-      gameCode = gameCodeController.text;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     const double inputWidth = 56;
@@ -67,7 +46,7 @@ class _GameCodeInputState extends State<GameCodeInput> {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 40),
       child: Pinput(
-          controller: gameCodeController,
+          controller: widget.gameCodeController,
           cursor: cursor,
           defaultPinTheme: defaultPinTheme,
           focusedPinTheme: focusedPinTheme,
