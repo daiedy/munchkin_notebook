@@ -5,6 +5,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:munchkin_notebook1/features/choose_gender_page/gender.dart';
 import 'package:munchkin_notebook1/features/choose_gender_page/gender_controller.dart';
 import 'package:munchkin_notebook1/features/choose_gender_page/presentation/gender_button.dart';
+import 'package:munchkin_notebook1/features/choose_gender_page/presentation/gender_buttons_group.dart';
 import 'package:munchkin_notebook1/features/primary_button/presentation/primary_button.dart';
 import 'package:munchkin_notebook1/features/secondary_button/presentation/secondary_button.dart';
 import 'package:munchkin_notebook1/navigation/router.gr.dart';
@@ -29,25 +30,8 @@ class ChooseGenderPage extends StatelessWidget {
               color: AppColors.stub,
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 50),
-              child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    GenderButton(
-                        gender: Gender.male,
-                        logoPath: AppLocalizations.of(context)!.maleLogo,
-                        controller: _genderController),
-                    GenderButton(
-                        gender: Gender.female,
-                        logoPath: AppLocalizations.of(context)!.femaleLogo,
-                        controller: _genderController),
-                  ]
-                      .map((widget) => Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 30),
-                            child: widget,
-                          ))
-                      .toList()),
-            )
+                padding: const EdgeInsets.symmetric(vertical: 50),
+                child: GenderButtonsGroup(controller: _genderController))
           ],
         ),
         actions: Column(

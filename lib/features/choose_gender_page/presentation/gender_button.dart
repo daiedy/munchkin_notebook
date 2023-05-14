@@ -1,46 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:munchkin_notebook1/core/ui/constants/app_colors.dart';
-import 'package:munchkin_notebook1/features/choose_gender_page/gender.dart';
-import 'package:munchkin_notebook1/features/choose_gender_page/gender_controller.dart';
 
-class GenderButton extends StatefulWidget {
+class GenderButton extends StatelessWidget {
   const GenderButton(
       {super.key,
-      required this.gender,
       required this.logoPath,
-      required this.controller});
+      required this.selected,
+      required this.onTap});
 
-  final Gender gender;
   final String logoPath;
-  final GenderController controller;
+  final bool selected;
+  final Function() onTap;
 
-  @override
-  State<GenderButton> createState() => _GenderButtonState();
-}
-
-class _GenderButtonState extends State<GenderButton> {
-  late Gender _currentGender;
-
-  @override
-  void initState() {
-    _currentGender = widget.controller.getCurrentGender;
-    widget.controller.addGenderListener((Gender gender) {
-      setState(() {
-        _currentGender = widget.controller.getCurrentGender;
-      });
-    });
-    super.initState();
-  }
-
+  // @override
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        widget.controller.setGender(widget.gender);
-      },
+      onTap: onTap,
       child: Opacity(
-        opacity: _currentGender == widget.gender ? 1 : 0.5,
-        child: Image.asset(widget.logoPath, color: AppColors.contentColor),
+        opacity: selected ? 1 : 0.5,
+        child: Image.asset(logoPath, color: AppColors.contentColor),
       ),
     );
   }
