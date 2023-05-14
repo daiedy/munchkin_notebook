@@ -53,7 +53,9 @@ class _EnterNamePageState extends State<EnterNamePage> {
           children: [
             PrimaryButton(
                 text: AppLocalizations.of(context)!.continue_button,
-                onPress: () {}),
+                onPress: () {
+                  AutoRouter.of(context).navigate(ChooseGenderRoute());
+                }),
             SecondaryButton(
                 text: AppLocalizations.of(context)!.back_to_start_button,
                 onPress: () {

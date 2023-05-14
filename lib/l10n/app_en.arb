@@ -20,5 +20,9 @@
     "join_game_button": "Присоединиться к игре",
     "game_not_created_button": "Игра ещё не создана?",
     "enter_name_title": "Введите имя манчкина",
-    "chikibryak": "assets/images/chikibryak.png"
+    "chikibryak": "assets/images/chikibryak.png",
+    "choose_gender_title": "Выберите пол",
+    "back_to_enter_name_button": "Вернуться к вводу имени",
+    "maleLogo": "assets/images/male.png",
+    "femaleLogo": "assets/images/female.png"
 }
