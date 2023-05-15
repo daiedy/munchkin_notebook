@@ -8,8 +8,8 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:auto_route/auto_route.dart' as _i9;
-import 'package:flutter/material.dart' as _i10;
+import 'package:auto_route/auto_route.dart' as _i10;
+import 'package:flutter/material.dart' as _i11;
 import 'package:munchkin_notebook1/features/choose_color_page/presentation/choose_color_page.dart'
     as _i8;
 import 'package:munchkin_notebook1/features/choose_gender_page/presentation/choose_gender_page.dart'
@@ -20,6 +20,8 @@ import 'package:munchkin_notebook1/features/enter_code/presentation/enter_code.d
     as _i2;
 import 'package:munchkin_notebook1/features/enter_name_page/presentation/enter_name_page.dart'
     as _i3;
+import 'package:munchkin_notebook1/features/game_page/presentation/game_page.dart'
+    as _i9;
 import 'package:munchkin_notebook1/features/join_game/presentation/join_game.dart'
     as _i4;
 import 'package:munchkin_notebook1/features/max_level_page/presentation/max_level_page.dart'
@@ -27,43 +29,43 @@ import 'package:munchkin_notebook1/features/max_level_page/presentation/max_leve
 import 'package:munchkin_notebook1/features/self_counting/presentation/self_counting.dart'
     as _i6;
 
-abstract class $AppRouter extends _i9.RootStackRouter {
+abstract class $AppRouter extends _i10.RootStackRouter {
   $AppRouter({super.navigatorKey});
 
   @override
-  final Map<String, _i9.PageFactory> pagesMap = {
+  final Map<String, _i10.PageFactory> pagesMap = {
     CreateGameRoute.name: (routeData) {
-      return _i9.AutoRoutePage<dynamic>(
+      return _i10.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i1.CreateGamePage(),
       );
     },
     EnterCodeRoute.name: (routeData) {
-      return _i9.AutoRoutePage<dynamic>(
+      return _i10.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i2.EnterCodePage(),
       );
     },
     EnterNameRoute.name: (routeData) {
-      return _i9.AutoRoutePage<dynamic>(
+      return _i10.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i3.EnterNamePage(),
       );
     },
     JoinGameRoute.name: (routeData) {
-      return _i9.AutoRoutePage<dynamic>(
+      return _i10.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i4.JoinGamePage(),
       );
     },
     MaxLevelRoute.name: (routeData) {
-      return _i9.AutoRoutePage<dynamic>(
+      return _i10.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i5.MaxLevelPage(),
       );
     },
     SelfCountingRoute.name: (routeData) {
-      return _i9.AutoRoutePage<dynamic>(
+      return _i10.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i6.SelfCountingPage(),
       );
@@ -71,7 +73,7 @@ abstract class $AppRouter extends _i9.RootStackRouter {
     ChooseGenderRoute.name: (routeData) {
       final args = routeData.argsAs<ChooseGenderRouteArgs>(
           orElse: () => const ChooseGenderRouteArgs());
-      return _i9.AutoRoutePage<dynamic>(
+      return _i10.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: _i7.ChooseGenderPage(key: args.key),
       );
@@ -79,9 +81,15 @@ abstract class $AppRouter extends _i9.RootStackRouter {
     ChooseColorRoute.name: (routeData) {
       final args = routeData.argsAs<ChooseColorRouteArgs>(
           orElse: () => const ChooseColorRouteArgs());
-      return _i9.AutoRoutePage<dynamic>(
+      return _i10.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: _i8.ChooseColorPage(key: args.key),
+      );
+    },
+    GameRoute.name: (routeData) {
+      return _i10.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i9.GamePage(),
       );
     },
   };
@@ -89,8 +97,8 @@ abstract class $AppRouter extends _i9.RootStackRouter {
 
 /// generated route for
 /// [_i1.CreateGamePage]
-class CreateGameRoute extends _i9.PageRouteInfo<void> {
-  const CreateGameRoute({List<_i9.PageRouteInfo>? children})
+class CreateGameRoute extends _i10.PageRouteInfo<void> {
+  const CreateGameRoute({List<_i10.PageRouteInfo>? children})
       : super(
           CreateGameRoute.name,
           initialChildren: children,
@@ -98,13 +106,13 @@ class CreateGameRoute extends _i9.PageRouteInfo<void> {
 
   static const String name = 'CreateGameRoute';
 
-  static const _i9.PageInfo<void> page = _i9.PageInfo<void>(name);
+  static const _i10.PageInfo<void> page = _i10.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i2.EnterCodePage]
-class EnterCodeRoute extends _i9.PageRouteInfo<void> {
-  const EnterCodeRoute({List<_i9.PageRouteInfo>? children})
+class EnterCodeRoute extends _i10.PageRouteInfo<void> {
+  const EnterCodeRoute({List<_i10.PageRouteInfo>? children})
       : super(
           EnterCodeRoute.name,
           initialChildren: children,
@@ -112,13 +120,13 @@ class EnterCodeRoute extends _i9.PageRouteInfo<void> {
 
   static const String name = 'EnterCodeRoute';
 
-  static const _i9.PageInfo<void> page = _i9.PageInfo<void>(name);
+  static const _i10.PageInfo<void> page = _i10.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i3.EnterNamePage]
-class EnterNameRoute extends _i9.PageRouteInfo<void> {
-  const EnterNameRoute({List<_i9.PageRouteInfo>? children})
+class EnterNameRoute extends _i10.PageRouteInfo<void> {
+  const EnterNameRoute({List<_i10.PageRouteInfo>? children})
       : super(
           EnterNameRoute.name,
           initialChildren: children,
@@ -126,13 +134,13 @@ class EnterNameRoute extends _i9.PageRouteInfo<void> {
 
   static const String name = 'EnterNameRoute';
 
-  static const _i9.PageInfo<void> page = _i9.PageInfo<void>(name);
+  static const _i10.PageInfo<void> page = _i10.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i4.JoinGamePage]
-class JoinGameRoute extends _i9.PageRouteInfo<void> {
-  const JoinGameRoute({List<_i9.PageRouteInfo>? children})
+class JoinGameRoute extends _i10.PageRouteInfo<void> {
+  const JoinGameRoute({List<_i10.PageRouteInfo>? children})
       : super(
           JoinGameRoute.name,
           initialChildren: children,
@@ -140,13 +148,13 @@ class JoinGameRoute extends _i9.PageRouteInfo<void> {
 
   static const String name = 'JoinGameRoute';
 
-  static const _i9.PageInfo<void> page = _i9.PageInfo<void>(name);
+  static const _i10.PageInfo<void> page = _i10.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i5.MaxLevelPage]
-class MaxLevelRoute extends _i9.PageRouteInfo<void> {
-  const MaxLevelRoute({List<_i9.PageRouteInfo>? children})
+class MaxLevelRoute extends _i10.PageRouteInfo<void> {
+  const MaxLevelRoute({List<_i10.PageRouteInfo>? children})
       : super(
           MaxLevelRoute.name,
           initialChildren: children,
@@ -154,13 +162,13 @@ class MaxLevelRoute extends _i9.PageRouteInfo<void> {
 
   static const String name = 'MaxLevelRoute';
 
-  static const _i9.PageInfo<void> page = _i9.PageInfo<void>(name);
+  static const _i10.PageInfo<void> page = _i10.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i6.SelfCountingPage]
-class SelfCountingRoute extends _i9.PageRouteInfo<void> {
-  const SelfCountingRoute({List<_i9.PageRouteInfo>? children})
+class SelfCountingRoute extends _i10.PageRouteInfo<void> {
+  const SelfCountingRoute({List<_i10.PageRouteInfo>? children})
       : super(
           SelfCountingRoute.name,
           initialChildren: children,
@@ -168,15 +176,15 @@ class SelfCountingRoute extends _i9.PageRouteInfo<void> {
 
   static const String name = 'SelfCountingRoute';
 
-  static const _i9.PageInfo<void> page = _i9.PageInfo<void>(name);
+  static const _i10.PageInfo<void> page = _i10.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i7.ChooseGenderPage]
-class ChooseGenderRoute extends _i9.PageRouteInfo<ChooseGenderRouteArgs> {
+class ChooseGenderRoute extends _i10.PageRouteInfo<ChooseGenderRouteArgs> {
   ChooseGenderRoute({
-    _i10.Key? key,
-    List<_i9.PageRouteInfo>? children,
+    _i11.Key? key,
+    List<_i10.PageRouteInfo>? children,
   }) : super(
           ChooseGenderRoute.name,
           args: ChooseGenderRouteArgs(key: key),
@@ -185,14 +193,14 @@ class ChooseGenderRoute extends _i9.PageRouteInfo<ChooseGenderRouteArgs> {
 
   static const String name = 'ChooseGenderRoute';
 
-  static const _i9.PageInfo<ChooseGenderRouteArgs> page =
-      _i9.PageInfo<ChooseGenderRouteArgs>(name);
+  static const _i10.PageInfo<ChooseGenderRouteArgs> page =
+      _i10.PageInfo<ChooseGenderRouteArgs>(name);
 }
 
 class ChooseGenderRouteArgs {
   const ChooseGenderRouteArgs({this.key});
 
-  final _i10.Key? key;
+  final _i11.Key? key;
 
   @override
   String toString() {
@@ -202,10 +210,10 @@ class ChooseGenderRouteArgs {
 
 /// generated route for
 /// [_i8.ChooseColorPage]
-class ChooseColorRoute extends _i9.PageRouteInfo<ChooseColorRouteArgs> {
+class ChooseColorRoute extends _i10.PageRouteInfo<ChooseColorRouteArgs> {
   ChooseColorRoute({
-    _i10.Key? key,
-    List<_i9.PageRouteInfo>? children,
+    _i11.Key? key,
+    List<_i10.PageRouteInfo>? children,
   }) : super(
           ChooseColorRoute.name,
           args: ChooseColorRouteArgs(key: key),
@@ -214,17 +222,31 @@ class ChooseColorRoute extends _i9.PageRouteInfo<ChooseColorRouteArgs> {
 
   static const String name = 'ChooseColorRoute';
 
-  static const _i9.PageInfo<ChooseColorRouteArgs> page =
-      _i9.PageInfo<ChooseColorRouteArgs>(name);
+  static const _i10.PageInfo<ChooseColorRouteArgs> page =
+      _i10.PageInfo<ChooseColorRouteArgs>(name);
 }
 
 class ChooseColorRouteArgs {
   const ChooseColorRouteArgs({this.key});
 
-  final _i10.Key? key;
+  final _i11.Key? key;
 
   @override
   String toString() {
     return 'ChooseColorRouteArgs{key: $key}';
   }
+}
+
+/// generated route for
+/// [_i9.GamePage]
+class GameRoute extends _i10.PageRouteInfo<void> {
+  const GameRoute({List<_i10.PageRouteInfo>? children})
+      : super(
+          GameRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'GameRoute';
+
+  static const _i10.PageInfo<void> page = _i10.PageInfo<void>(name);
 }
