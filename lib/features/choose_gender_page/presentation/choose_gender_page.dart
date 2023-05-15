@@ -2,9 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:munchkin_notebook1/features/base_page/presentation/base_page.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:munchkin_notebook1/features/choose_gender_page/gender.dart';
 import 'package:munchkin_notebook1/features/choose_gender_page/gender_controller.dart';
-import 'package:munchkin_notebook1/features/choose_gender_page/presentation/gender_button.dart';
 import 'package:munchkin_notebook1/features/choose_gender_page/presentation/gender_buttons_group.dart';
 import 'package:munchkin_notebook1/features/primary_button/presentation/primary_button.dart';
 import 'package:munchkin_notebook1/features/secondary_button/presentation/secondary_button.dart';
@@ -39,7 +37,7 @@ class ChooseGenderPage extends StatelessWidget {
             PrimaryButton(
                 text: AppLocalizations.of(context)!.continue_button,
                 onPress: () {
-                  //TODO: сделать роутинг на страницу "Выберите цвет"
+                  AutoRouter.of(context).navigate(ChooseColorRoute());
                 }),
             SecondaryButton(
                 text: AppLocalizations.of(context)!.back_to_enter_name_button,

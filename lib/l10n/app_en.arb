@@ -24,5 +24,7 @@
     "choose_gender_title": "Выберите пол",
     "back_to_enter_name_button": "Вернуться к вводу имени",
     "maleLogo": "assets/images/male.png",
-    "femaleLogo": "assets/images/female.png"
+    "femaleLogo": "assets/images/female.png",
+    "choose_color_title": "Выберите цвет",
+    "back_to_choose_gender_button": "Вернуться к выбору пола"
 }
