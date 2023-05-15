@@ -44,7 +44,7 @@ class _EnterCodePageState extends State<EnterCodePage> {
             PrimaryButton(
                 text: AppLocalizations.of(context)!.continue_button,
                 onPress: () {
-                  //TODO: add routing to enter_name
+                  AutoRouter.of(context).navigate(const EnterNameRoute());
                 }),
             SecondaryButton(
                 text: AppLocalizations.of(context)!.back_to_start_button,
