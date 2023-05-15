@@ -20,7 +20,9 @@ class ChooseColorPage extends StatelessWidget {
     return BasePage(
         title: AppLocalizations.of(context)!.choose_color_title,
         body: SizedBox(
-            height: 600, child: ColorPicker(controller: _colorController)),
+          height: 550,
+          child: ColorPicker(controller: _colorController),
+        ),
         actions: Column(
           children: [
             PrimaryButton(
