@@ -12,8 +12,9 @@ import '../../../core/ui/constants/app_colors.dart';
 
 @RoutePage()
 class ChooseGenderPage extends StatelessWidget {
-  ChooseGenderPage({super.key});
+  ChooseGenderPage({super.key, required this.playerName});
 
+  final String playerName;
   final GenderController _genderController = GenderController();
 
   @override
@@ -37,12 +38,14 @@ class ChooseGenderPage extends StatelessWidget {
             PrimaryButton(
                 text: AppLocalizations.of(context)!.continue_button,
                 onPress: () {
-                  AutoRouter.of(context).navigate(ChooseColorRoute());
+                  AutoRouter.of(context).navigate(ChooseColorRoute(
+                      genderPlayer: _genderController.getCurrentGender,
+                      playerName: playerName));
                 }),
             SecondaryButton(
                 text: AppLocalizations.of(context)!.back_to_enter_name_button,
                 onPress: () {
-                  AutoRouter.of(context).navigate(const EnterNameRoute());
+                  AutoRouter.of(context).pop(const EnterNameRoute());
                 })
           ],
         ));

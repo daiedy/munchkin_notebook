@@ -3,11 +3,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:munchkin_notebook1/core/ui/constants/app_colors.dart';
 import 'package:munchkin_notebook1/features/base_page/presentation/base_page.dart';
+import 'package:munchkin_notebook1/features/choose_gender_page/gender.dart';
 import 'package:munchkin_notebook1/features/common_text/presentation/common_text.dart';
 
 @RoutePage()
 class GamePage extends StatelessWidget {
-  const GamePage({super.key});
+  const GamePage(
+      {super.key,
+      required this.playerName,
+      required this.playerGender,
+      required this.playerColor});
+
+  final String playerName;
+  final Gender playerGender;
+  final Color playerColor;
 
   @override
   Widget build(BuildContext context) {

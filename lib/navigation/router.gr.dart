@@ -8,10 +8,14 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
+import 'dart:ui' as _i13;
+
 import 'package:auto_route/auto_route.dart' as _i10;
 import 'package:flutter/material.dart' as _i11;
 import 'package:munchkin_notebook1/features/choose_color_page/presentation/choose_color_page.dart'
     as _i8;
+import 'package:munchkin_notebook1/features/choose_gender_page/gender.dart'
+    as _i12;
 import 'package:munchkin_notebook1/features/choose_gender_page/presentation/choose_gender_page.dart'
     as _i7;
 import 'package:munchkin_notebook1/features/create_game_page/presentation/create_game_page.dart'
@@ -71,25 +75,36 @@ abstract class $AppRouter extends _i10.RootStackRouter {
       );
     },
     ChooseGenderRoute.name: (routeData) {
-      final args = routeData.argsAs<ChooseGenderRouteArgs>(
-          orElse: () => const ChooseGenderRouteArgs());
+      final args = routeData.argsAs<ChooseGenderRouteArgs>();
       return _i10.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i7.ChooseGenderPage(key: args.key),
+        child: _i7.ChooseGenderPage(
+          key: args.key,
+          playerName: args.playerName,
+        ),
       );
     },
     ChooseColorRoute.name: (routeData) {
-      final args = routeData.argsAs<ChooseColorRouteArgs>(
-          orElse: () => const ChooseColorRouteArgs());
+      final args = routeData.argsAs<ChooseColorRouteArgs>();
       return _i10.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i8.ChooseColorPage(key: args.key),
+        child: _i8.ChooseColorPage(
+          key: args.key,
+          playerName: args.playerName,
+          playerGender: args.genderPlayer,
+        ),
       );
     },
     GameRoute.name: (routeData) {
+      final args = routeData.argsAs<GameRouteArgs>();
       return _i10.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i9.GamePage(),
+        child: _i9.GamePage(
+          key: args.key,
+          playerName: args.playerName,
+          playerGender: args.playerGender,
+          playerColor: args.playerColor,
+        ),
       );
     },
   };
@@ -184,10 +199,14 @@ class SelfCountingRoute extends _i10.PageRouteInfo<void> {
 class ChooseGenderRoute extends _i10.PageRouteInfo<ChooseGenderRouteArgs> {
   ChooseGenderRoute({
     _i11.Key? key,
+    required String playerName,
     List<_i10.PageRouteInfo>? children,
   }) : super(
           ChooseGenderRoute.name,
-          args: ChooseGenderRouteArgs(key: key),
+          args: ChooseGenderRouteArgs(
+            key: key,
+            playerName: playerName,
+          ),
           initialChildren: children,
         );
 
@@ -198,13 +217,18 @@ class ChooseGenderRoute extends _i10.PageRouteInfo<ChooseGenderRouteArgs> {
 }
 
 class ChooseGenderRouteArgs {
-  const ChooseGenderRouteArgs({this.key});
+  const ChooseGenderRouteArgs({
+    this.key,
+    required this.playerName,
+  });
 
   final _i11.Key? key;
 
+  final String playerName;
+
   @override
   String toString() {
-    return 'ChooseGenderRouteArgs{key: $key}';
+    return 'ChooseGenderRouteArgs{key: $key, playerName: $playerName}';
   }
 }
 
@@ -213,10 +237,16 @@ class ChooseGenderRouteArgs {
 class ChooseColorRoute extends _i10.PageRouteInfo<ChooseColorRouteArgs> {
   ChooseColorRoute({
     _i11.Key? key,
+    required String playerName,
+    required _i12.Gender genderPlayer,
     List<_i10.PageRouteInfo>? children,
   }) : super(
           ChooseColorRoute.name,
-          args: ChooseColorRouteArgs(key: key),
+          args: ChooseColorRouteArgs(
+            key: key,
+            playerName: playerName,
+            genderPlayer: genderPlayer,
+          ),
           initialChildren: children,
         );
 
@@ -227,26 +257,68 @@ class ChooseColorRoute extends _i10.PageRouteInfo<ChooseColorRouteArgs> {
 }
 
 class ChooseColorRouteArgs {
-  const ChooseColorRouteArgs({this.key});
+  const ChooseColorRouteArgs({
+    this.key,
+    required this.playerName,
+    required this.genderPlayer,
+  });
 
   final _i11.Key? key;
 
+  final String playerName;
+
+  final _i12.Gender genderPlayer;
+
   @override
   String toString() {
-    return 'ChooseColorRouteArgs{key: $key}';
+    return 'ChooseColorRouteArgs{key: $key, playerName: $playerName, genderPlayer: $genderPlayer}';
   }
 }
 
 /// generated route for
 /// [_i9.GamePage]
-class GameRoute extends _i10.PageRouteInfo<void> {
-  const GameRoute({List<_i10.PageRouteInfo>? children})
-      : super(
+class GameRoute extends _i10.PageRouteInfo<GameRouteArgs> {
+  GameRoute({
+    _i11.Key? key,
+    required String playerName,
+    required _i12.Gender playerGender,
+    required _i13.Color playerColor,
+    List<_i10.PageRouteInfo>? children,
+  }) : super(
           GameRoute.name,
+          args: GameRouteArgs(
+            key: key,
+            playerName: playerName,
+            playerGender: playerGender,
+            playerColor: playerColor,
+          ),
           initialChildren: children,
         );
 
   static const String name = 'GameRoute';
 
-  static const _i10.PageInfo<void> page = _i10.PageInfo<void>(name);
+  static const _i10.PageInfo<GameRouteArgs> page =
+      _i10.PageInfo<GameRouteArgs>(name);
+}
+
+class GameRouteArgs {
+  const GameRouteArgs({
+    this.key,
+    required this.playerName,
+    required this.playerGender,
+    required this.playerColor,
+  });
+
+  final _i11.Key? key;
+
+  final String playerName;
+
+  final _i12.Gender playerGender;
+
+  final _i13.Color playerColor;
+
+  @override
+  String toString() {
+    return 'GameRouteArgs{key: $key, playerName: $playerName, playerGender: $playerGender, playerColor: $playerColor}';
+  }
 }
