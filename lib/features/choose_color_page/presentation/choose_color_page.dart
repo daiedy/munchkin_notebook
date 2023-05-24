@@ -31,10 +31,7 @@ class ChooseColorPage extends StatelessWidget {
             PrimaryButton(
                 text: AppLocalizations.of(context)!.continue_button,
                 onPress: () {
-                  AutoRouter.of(context).navigate(GameRoute(
-                      playerColor: _colorController.getCurrentColor,
-                      playerGender: playerGender,
-                      playerName: playerName));
+                  AutoRouter.of(context).navigate(const GameRoute());
                 }),
             SecondaryButton(
                 text: AppLocalizations.of(context)!.back_to_enter_name_button,

@@ -8,15 +8,7 @@ import 'package:munchkin_notebook1/features/common_text/presentation/common_text
 
 @RoutePage()
 class GamePage extends StatelessWidget {
-  const GamePage(
-      {super.key,
-      required this.playerName,
-      required this.playerGender,
-      required this.playerColor});
-
-  final String playerName;
-  final Gender playerGender;
-  final Color playerColor;
+  const GamePage({super.key});
 
   @override
   Widget build(BuildContext context) {

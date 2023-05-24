@@ -39,7 +39,7 @@ class ChooseGenderPage extends StatelessWidget {
                 text: AppLocalizations.of(context)!.continue_button,
                 onPress: () {
                   AutoRouter.of(context).navigate(ChooseColorRoute(
-                      genderPlayer: _genderController.getCurrentGender,
+                      playerGender: _genderController.getCurrentGender,
                       playerName: playerName));
                 }),
             SecondaryButton(
