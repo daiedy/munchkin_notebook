@@ -4,6 +4,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:munchkin_notebook1/core/ui/constants/app_colors.dart';
 import 'package:munchkin_notebook1/features/base_page/presentation/base_page.dart';
 import 'package:munchkin_notebook1/features/common_text/presentation/common_text.dart';
+import 'package:munchkin_notebook1/navigation/router.gr.dart';
 
 @RoutePage()
 class GamePage extends StatelessWidget {
@@ -23,10 +24,13 @@ class GamePage extends StatelessWidget {
             CommonText(AppLocalizations.of(context)!.game_text)
           ],
         ),
-        actions: const InkWell(
-            child: Icon(
-          Icons.more_horiz,
-          size: 50,
-        )));
+        actions: InkWell(
+            onTap: () {
+              AutoRouter.of(context).navigate(const GameOptionsRoute());
+            },
+            child: const Icon(
+              Icons.more_horiz,
+              size: 50,
+            )));
   }
 }
