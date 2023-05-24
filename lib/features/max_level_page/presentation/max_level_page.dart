@@ -75,7 +75,7 @@ class _MaxLevelPageState extends State<MaxLevelPage> {
             SecondaryButton(
                 text: AppLocalizations.of(context)!.back_to_start_button,
                 onPress: () {
-                  AutoRouter.of(context).navigate(const CreateGameRoute());
+                  AutoRouter.of(context).pop();
                 })
           ],
         ));

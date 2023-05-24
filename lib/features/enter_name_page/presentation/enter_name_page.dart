@@ -54,7 +54,8 @@ class _EnterNamePageState extends State<EnterNamePage> {
             PrimaryButton(
                 text: AppLocalizations.of(context)!.continue_button,
                 onPress: () {
-                  AutoRouter.of(context).navigate(ChooseGenderRoute());
+                  AutoRouter.of(context).navigate(
+                      ChooseGenderRoute(playerName: nameController.text));
                 }),
             SecondaryButton(
                 text: AppLocalizations.of(context)!.back_to_start_button,

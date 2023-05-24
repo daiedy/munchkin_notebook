@@ -4,14 +4,18 @@ import 'package:munchkin_notebook1/features/base_page/presentation/base_page.dar
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:munchkin_notebook1/features/choose_color_page/color_picker_controller.dart';
 import 'package:munchkin_notebook1/features/choose_color_page/presentation/color_picker.dart';
+import 'package:munchkin_notebook1/features/choose_gender_page/gender.dart';
 import 'package:munchkin_notebook1/features/primary_button/presentation/primary_button.dart';
 import 'package:munchkin_notebook1/features/secondary_button/presentation/secondary_button.dart';
 import 'package:munchkin_notebook1/navigation/router.gr.dart';
 
 @RoutePage()
 class ChooseColorPage extends StatelessWidget {
-  ChooseColorPage({super.key});
+  ChooseColorPage(
+      {super.key, required this.playerName, required this.playerGender});
 
+  final String playerName;
+  final Gender playerGender;
   final ColorController _colorController = ColorController(totalColors: 35);
 
   @override
@@ -32,7 +36,7 @@ class ChooseColorPage extends StatelessWidget {
             SecondaryButton(
                 text: AppLocalizations.of(context)!.back_to_enter_name_button,
                 onPress: () {
-                  AutoRouter.of(context).navigate(ChooseGenderRoute());
+                  AutoRouter.of(context).pop();
                 })
           ],
         ));
