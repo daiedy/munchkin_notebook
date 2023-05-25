@@ -70,7 +70,8 @@ class _MaxLevelPageState extends State<MaxLevelPage> {
             PrimaryButton(
                 text: AppLocalizations.of(context)!.continue_button,
                 onPress: () {
-                  AutoRouter.of(context).navigate(const SelfCountingRoute());
+                  AutoRouter.of(context).navigate(SelfCountingRoute(
+                      maxLevel: _maxLevelController.getLevel()));
                 }),
             SecondaryButton(
                 text: AppLocalizations.of(context)!.back_to_start_button,
