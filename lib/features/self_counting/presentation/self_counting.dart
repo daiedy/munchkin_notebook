@@ -39,12 +39,13 @@ class SelfCountingPage extends StatelessWidget {
             PrimaryButton(
                 text: AppLocalizations.of(context)!.self_counting_button,
                 onPress: () {
+                  gameBloc.add(CreateGame(maxLevel, true));
                   AutoRouter.of(context).navigate(const EnterNameRoute());
                 }),
             SecondaryButton(
-              text: AppLocalizations.of(context)!.self_counting_button,
+              text: AppLocalizations.of(context)!.back_to_max_level_button,
               onPress: () {
-                AutoRouter.of(context).navigate(const MaxLevelRoute());
+                AutoRouter.of(context).pop();
               },
             )
           ],
