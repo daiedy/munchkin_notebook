@@ -9,3 +9,11 @@ class CreateGame extends GameEvent {
 
   CreateGame(this.maxLevel, this.selfCounting);
 }
+
+class AddPlayer extends GameEvent {
+  final String name;
+  final Gender gender;
+  final Color color;
+
+  AddPlayer({required this.name, required this.gender, required this.color});
+}
