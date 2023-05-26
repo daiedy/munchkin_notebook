@@ -5,5 +5,11 @@ class Game {
 
   int maxLevel = 10;
   bool selfCounting = false;
-  List<Player> players = [];
+  final List<Player> _players = [];
+
+  List<Player> get getPlayers => _players;
+
+  void addPlayer(Player player) {
+    _players.add(player);
+  }
 }

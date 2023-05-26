@@ -5,8 +5,10 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:munchkin_notebook1/features/choose_color_page/color_picker_controller.dart';
 import 'package:munchkin_notebook1/features/choose_color_page/presentation/color_picker.dart';
 import 'package:munchkin_notebook1/features/choose_gender_page/gender.dart';
+import 'package:munchkin_notebook1/features/game/presentation/bloc/game_bloc.dart';
 import 'package:munchkin_notebook1/features/primary_button/presentation/primary_button.dart';
 import 'package:munchkin_notebook1/features/secondary_button/presentation/secondary_button.dart';
+import 'package:munchkin_notebook1/main.dart';
 import 'package:munchkin_notebook1/navigation/router.gr.dart';
 
 @RoutePage()
@@ -31,6 +33,10 @@ class ChooseColorPage extends StatelessWidget {
             PrimaryButton(
                 text: AppLocalizations.of(context)!.continue_button,
                 onPress: () {
+                  gameBloc.add(AddPlayer(
+                      name: playerName,
+                      gender: playerGender,
+                      color: _colorController.getCurrentColor));
                   AutoRouter.of(context).navigate(const GameRoute());
                 }),
             SecondaryButton(
