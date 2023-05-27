@@ -39,7 +39,7 @@
     "game_not_created": "Игра еще не создана",
     "list_of_players_title": "Список игроков",
     "add_player_button": "Добавить игрока",
-    "back_to_game_options_buton": "Вернуться к параметрам игры",
+    "back_to_game_options_button": "Вернуться к параметрам игры",
     "same_name_error": "Same name player exists",
     "enter_text_error": "Enter text"
 }

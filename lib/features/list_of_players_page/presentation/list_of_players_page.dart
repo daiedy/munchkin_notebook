@@ -44,7 +44,7 @@ class ListOfPlayersPage extends StatelessWidget {
                   AutoRouter.of(context).navigate(const EnterNameRoute());
                 }),
             SecondaryButton(
-                text: AppLocalizations.of(context)!.back_to_start_button,
+                text: AppLocalizations.of(context)!.back_to_game_options_button,
                 onPress: () {
                   AutoRouter.of(context).pop();
                 })
