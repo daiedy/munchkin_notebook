@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:munchkin_notebook1/features/base_page/presentation/base_page.dart';
 import 'package:munchkin_notebook1/features/game/presentation/bloc/game_bloc.dart';
 import 'package:munchkin_notebook1/features/parameter_more/presentation/parameter_more.dart';
@@ -39,10 +40,21 @@ class ListOfPlayersPage extends StatelessWidget {
         actions: Column(
           children: [
             PrimaryButton(
-                text: AppLocalizations.of(context)!.continue_button,
-                onPress: () {
-                  AutoRouter.of(context).navigate(const EnterNameRoute());
-                }),
+                text: AppLocalizations.of(context)!.add_player_button,
+                onPress: gameBloc.game?.isMaxPlayers() ?? false
+                    ? () {
+                        if (gameBloc.game?.isMaxPlayers() ?? false) {
+                          AutoRouter.of(context).replaceAll([
+                            const ListOfPlayersRoute(),
+                            const EnterNameRoute()
+                          ]);
+                        } else {
+                          Fluttertoast.showToast(
+                              msg: AppLocalizations.of(context)!
+                                  .max_players_error);
+                        }
+                      }
+                    : null),
             SecondaryButton(
                 text: AppLocalizations.of(context)!.back_to_game_options_button,
                 onPress: () {

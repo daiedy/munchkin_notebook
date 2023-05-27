@@ -12,6 +12,8 @@ class Game {
   bool hasSameName(String name) =>
       _players.indexWhere((player) => player.name == name) > 0;
 
+  bool isMaxPlayers() => _players.length < 6;
+
   void addPlayer(Player player) {
     _players.add(player);
   }
