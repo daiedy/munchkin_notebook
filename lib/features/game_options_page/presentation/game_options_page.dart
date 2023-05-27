@@ -4,20 +4,16 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:munchkin_notebook1/features/base_page/presentation/base_page.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:munchkin_notebook1/features/game/presentation/bloc/game_bloc.dart';
-import 'package:munchkin_notebook1/features/game_options_page/presentation/parameter_text.dart';
+import 'package:munchkin_notebook1/features/parameter_text/parameter_text.dart';
 import 'package:munchkin_notebook1/features/parameter_more/presentation/parameter_more.dart';
 import 'package:munchkin_notebook1/features/secondary_button/presentation/secondary_button.dart';
 import 'package:munchkin_notebook1/main.dart';
+import 'package:munchkin_notebook1/navigation/router.gr.dart';
 
 @RoutePage()
-class GameOptionsPage extends StatefulWidget {
+class GameOptionsPage extends StatelessWidget {
   const GameOptionsPage({super.key});
 
-  @override
-  State<GameOptionsPage> createState() => _GameOptionsPageState();
-}
-
-class _GameOptionsPageState extends State<GameOptionsPage> {
   @override
   Widget build(BuildContext context) {
     return BasePage(
@@ -46,6 +42,10 @@ class _GameOptionsPageState extends State<GameOptionsPage> {
                       child: ParameterMore(
                         body: ParameterText(
                             "${AppLocalizations.of(context)!.players_number}: ${state.game.getPlayers.length}"),
+                        onPress: () {
+                          AutoRouter.of(context)
+                              .navigate(const ListOfPlayersRoute());
+                        },
                       ),
                     ),
                     Padding(

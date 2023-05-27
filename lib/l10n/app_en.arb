@@ -36,5 +36,10 @@
     "self_counting": "Каждый считает очки сам",
     "back_to_game_button": "Вернуться  к игре",
     "gamemaster_mode": "Есть мастер игры",
-    "game_not_created": "Игра еще не создана"
+    "game_not_created": "Игра еще не создана",
+    "list_of_players_title": "Список игроков",
+    "add_player_button": "Добавить игрока",
+    "back_to_game_options_buton": "Вернуться к параметрам игры",
+    "same_name_error": "Same name player exists",
+    "enter_text_error": "Enter text"
 }
