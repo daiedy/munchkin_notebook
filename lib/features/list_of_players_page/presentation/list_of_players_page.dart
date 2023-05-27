@@ -44,10 +44,7 @@ class ListOfPlayersPage extends StatelessWidget {
                 onPress: gameBloc.game?.isMaxPlayers() ?? false
                     ? () {
                         if (gameBloc.game?.isMaxPlayers() ?? false) {
-                          AutoRouter.of(context).replaceAll([
-                            const ListOfPlayersRoute(),
-                            const EnterNameRoute()
-                          ]);
+                          AutoRouter.of(context).push(const EnterNameRoute());
                         } else {
                           Fluttertoast.showToast(
                               msg: AppLocalizations.of(context)!
