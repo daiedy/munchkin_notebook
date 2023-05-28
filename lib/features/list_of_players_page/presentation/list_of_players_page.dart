@@ -41,17 +41,9 @@ class ListOfPlayersPage extends StatelessWidget {
           children: [
             PrimaryButton(
                 text: AppLocalizations.of(context)!.add_player_button,
-                onPress: gameBloc.game?.isMaxPlayers() ?? false
-                    ? () {
-                        if (gameBloc.game?.isMaxPlayers() ?? false) {
-                          AutoRouter.of(context).push(const EnterNameRoute());
-                        } else {
-                          Fluttertoast.showToast(
-                              msg: AppLocalizations.of(context)!
-                                  .max_players_error);
-                        }
-                      }
-                    : null),
+                onPress: () {
+                  AutoRouter.of(context).push(const EnterNameRoute());
+                }),
             SecondaryButton(
                 text: AppLocalizations.of(context)!.back_to_game_options_button,
                 onPress: () {
