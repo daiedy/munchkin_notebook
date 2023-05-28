@@ -9,6 +9,9 @@ class Game {
 
   List<Player> get getPlayers => _players;
 
+  bool hasSameName(String name) =>
+      _players.indexWhere((player) => player.name == name) > 0;
+
   void addPlayer(Player player) {
     _players.add(player);
   }
