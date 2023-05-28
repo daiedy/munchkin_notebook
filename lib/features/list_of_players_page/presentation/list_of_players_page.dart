@@ -25,7 +25,7 @@ class ListOfPlayersPage extends StatelessWidget {
                 bloc: gameBloc,
                 builder: (context, state) {
                   if (state is GameCreated) {
-                    return Column(
+                    return ListView(
                         children: state.game.getPlayers
                             .map((player) => Padding(
                                 padding:
