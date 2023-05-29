@@ -11,7 +11,14 @@ class ParameterMore extends StatelessWidget {
     return InkWell(
       onTap: onPress,
       child: Row(
-        children: [body, const Spacer(), const Icon(Icons.more_horiz)],
+        children: [
+          body,
+          const Spacer(),
+          const Icon(
+            Icons.more_horiz,
+            size: 25,
+          )
+        ],
       ),
     );
   }

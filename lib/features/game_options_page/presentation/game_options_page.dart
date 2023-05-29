@@ -22,7 +22,7 @@ class GameOptionsPage extends StatelessWidget {
           child: BlocBuilder(
               bloc: gameBloc,
               builder: (context, state) {
-                if (state is GameCreated) {
+                if (state is EmptyGame) {
                   return Column(children: [
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 10),

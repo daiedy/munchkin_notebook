@@ -33,7 +33,7 @@ class ChooseColorPage extends StatelessWidget {
             PrimaryButton(
                 text: AppLocalizations.of(context)!.continue_button,
                 onPress: () {
-                  if (gameBloc.state is GameCreated) {
+                  if (gameBloc.state is EmptyGame) {
                     gameBloc.add(AddPlayer(
                         name: playerName,
                         gender: playerGender,
