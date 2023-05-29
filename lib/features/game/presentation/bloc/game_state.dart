@@ -5,6 +5,12 @@ abstract class GameState {}
 
 class GameNotReady extends GameState {}
 
+class EmptyGame extends GameState {
+  EmptyGame(this.game);
+
+  final Game game;
+}
+
 class GameCreated extends GameState {
   GameCreated(this.game);
 

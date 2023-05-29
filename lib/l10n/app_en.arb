@@ -42,5 +42,8 @@
     "back_to_game_options_button": "Вернуться к параметрам игры",
     "same_name_error": "Игрок с таким именем уже существует",
     "enter_text_error": "Введите имя",
-    "max_players_error": "Создано максимальное количество игроков"
+    "max_players_error": "Создано максимальное количество игроков",
+    "bonus_icon": "assets/images/bonus.png",
+    "strength_icon": "assets/images/strength.png",
+    "level_icon": "assets/images/star.png"
 }

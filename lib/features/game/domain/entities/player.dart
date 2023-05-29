@@ -7,4 +7,8 @@ class Player {
   String name;
   Gender gender;
   Color color;
+  int bonus = 0;
+  int level = 1;
+
+  int get strength => level + bonus;
 }
