@@ -20,10 +20,10 @@ class GamePage extends StatelessWidget {
         body: BlocBuilder(
           bloc: gameBloc,
           builder: (context, state) {
-            if (state is EmptyGame) {
-              return const EmptyGameBody();
-            } else if (state is GameCreated) {
-              return Expanded(child: GameBody(players: state.game.getPlayers));
+            if (state is GameCreated) {
+              return state.game.isEmptyGame
+                  ? const EmptyGameBody()
+                  : Expanded(child: GameBody(players: state.game.getPlayers));
             } else {
               return Text(AppLocalizations.of(context)!.game_not_created);
             }

@@ -15,13 +15,11 @@ class GameBloc extends Bloc<GameEvent, GameState> {
     on<GameEvent>((event, emit) {
       if (event is CreateGame) {
         game = Game(maxLevel: event.maxLevel, selfCounting: event.selfCounting);
-        emit(EmptyGame(game!));
+        emit(GameCreated(game!));
       } else if (event is AddPlayer) {
         game!.addPlayer(
             Player(name: event.name, gender: event.gender, color: event.color));
-        emit(game!.getPlayers.length > 1
-            ? GameCreated(game!)
-            : EmptyGame(game!));
+        emit(GameCreated(game!));
       }
     });
   }

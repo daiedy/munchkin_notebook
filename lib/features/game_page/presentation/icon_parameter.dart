@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:munchkin_notebook1/features/parameter_text/parameter_text.dart';
 
 class IconParameter extends StatelessWidget {
