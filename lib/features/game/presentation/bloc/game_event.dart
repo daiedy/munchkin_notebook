@@ -18,11 +18,8 @@ class AddPlayer extends GameEvent {
   AddPlayer({required this.name, required this.gender, required this.color});
 }
 
-class ChangePlayerStats extends GameEvent {
+class ChangePlayer extends GameEvent {
   final Player player;
-  final int level;
-  final int bonus;
 
-  ChangePlayerStats(
-      {required this.level, required this.bonus, required this.player});
+  ChangePlayer(this.player);
 }

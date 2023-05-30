@@ -1,39 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:munchkin_notebook1/features/number_counter/presentation/number_counter.dart';
 import 'package:munchkin_notebook1/features/player_page/presentation/stat_text.dart';
-import 'package:munchkin_notebook1/features/player_page/stat_controller.dart';
 
-class StatCounter extends StatefulWidget {
+class StatCounter extends StatelessWidget {
   const StatCounter(
       {super.key,
-      required this.controller,
-      this.editable = true,
       required this.title,
-      this.imgPath});
+      this.imgPath,
+      required this.decrement,
+      required this.increment,
+      required this.number});
 
-  final StatController controller;
-  final bool editable;
   final String title;
   final String? imgPath;
-
-  @override
-  State<StatCounter> createState() => _StatCounterState();
-}
-
-class _StatCounterState extends State<StatCounter> {
-  late int stat;
-
-  @override
-  void initState() {
-    stat = widget.controller.stat;
-    widget.controller.addStatChangedListener((value) {
-      setState(() {
-        stat = widget.controller.stat;
-      });
-    });
-
-    super.initState();
-  }
+  final Function() decrement;
+  final Function() increment;
+  final int number;
 
   @override
   Widget build(BuildContext context) {
@@ -41,17 +23,13 @@ class _StatCounterState extends State<StatCounter> {
       children: [
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 10),
-          child: StatText(widget.title),
+          child: StatText(title),
         ),
         NumberCounter(
-            decrement: () {
-              widget.controller.decrement();
-            },
-            increment: () {
-              widget.controller.increment();
-            },
-            imgPath: widget.imgPath,
-            number: widget.controller.stat),
+            decrement: decrement,
+            increment: increment,
+            imgPath: imgPath,
+            number: number),
       ],
     );
   }

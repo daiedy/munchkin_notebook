@@ -8,7 +8,7 @@ class Game {
   final List<Player> _players = [];
 
   List<Player> get getPlayers => _players;
-  bool get isEmptyGame => _players.length == 1;
+  bool get isEmptyGame => _players.length <= 1;
 
   bool hasSameName(String name) =>
       _players.indexWhere((player) => player.name == name) > 0;

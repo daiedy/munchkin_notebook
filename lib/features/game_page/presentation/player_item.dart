@@ -8,17 +8,15 @@ import 'package:munchkin_notebook1/features/parameter_text/parameter_text.dart';
 import 'package:munchkin_notebook1/navigation/router.gr.dart';
 
 class PlayerItem extends StatelessWidget {
-  const PlayerItem({super.key, required this.player, required this.maxLevel});
+  const PlayerItem({super.key, required this.player});
 
   final Player player;
-  final int maxLevel;
 
   @override
   Widget build(BuildContext context) {
     return ParameterMore(
       onPress: () {
-        AutoRouter.of(context)
-            .navigate(PlayerRoute(player: player, maxLevel: maxLevel));
+        AutoRouter.of(context).navigate(PlayerRoute(player: player));
       },
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

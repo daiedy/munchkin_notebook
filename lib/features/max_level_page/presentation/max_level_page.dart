@@ -19,6 +19,19 @@ class MaxLevelPage extends StatefulWidget {
 
 class _MaxLevelPageState extends State<MaxLevelPage> {
   final MaxLevelController _maxLevelController = MaxLevelController();
+  late int currentMaxLevel;
+
+  @override
+  void initState() {
+    currentMaxLevel = _maxLevelController.getLevel();
+    _maxLevelController.setChangedMaxLevel((maxLevel) {
+      setState(() {
+        currentMaxLevel = maxLevel;
+      });
+    });
+
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,16 +40,12 @@ class _MaxLevelPageState extends State<MaxLevelPage> {
         body: Column(children: [
           NumberCounter(
               decrement: () {
-                setState(() {
-                  _maxLevelController.decrementLevel();
-                });
+                _maxLevelController.decrementLevel();
               },
               increment: () {
-                setState(() {
-                  _maxLevelController.incrementLevel();
-                });
+                _maxLevelController.incrementLevel();
               },
-              number: _maxLevelController.getLevel()),
+              number: currentMaxLevel),
           CommonText(AppLocalizations.of(context)!.create_game_text)
         ]),
         actions: Column(
@@ -44,8 +53,8 @@ class _MaxLevelPageState extends State<MaxLevelPage> {
             PrimaryButton(
                 text: AppLocalizations.of(context)!.continue_button,
                 onPress: () {
-                  AutoRouter.of(context).navigate(SelfCountingRoute(
-                      maxLevel: _maxLevelController.getLevel()));
+                  AutoRouter.of(context)
+                      .navigate(SelfCountingRoute(maxLevel: currentMaxLevel));
                 }),
             SecondaryButton(
                 text: AppLocalizations.of(context)!.back_to_start_button,

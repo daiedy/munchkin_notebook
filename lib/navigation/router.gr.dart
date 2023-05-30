@@ -120,7 +120,6 @@ abstract class $AppRouter extends _i13.RootStackRouter {
         child: _i11.PlayerPage(
           key: args.key,
           player: args.player,
-          maxLevel: args.maxLevel,
         ),
       );
     },
@@ -336,14 +335,12 @@ class PlayerRoute extends _i13.PageRouteInfo<PlayerRouteArgs> {
   PlayerRoute({
     _i14.Key? key,
     required _i16.Player player,
-    required int maxLevel,
     List<_i13.PageRouteInfo>? children,
   }) : super(
           PlayerRoute.name,
           args: PlayerRouteArgs(
             key: key,
             player: player,
-            maxLevel: maxLevel,
           ),
           initialChildren: children,
         );
@@ -358,18 +355,15 @@ class PlayerRouteArgs {
   const PlayerRouteArgs({
     this.key,
     required this.player,
-    required this.maxLevel,
   });
 
   final _i14.Key? key;
 
   final _i16.Player player;
 
-  final int maxLevel;
-
   @override
   String toString() {
-    return 'PlayerRouteArgs{key: $key, player: $player, maxLevel: $maxLevel}';
+    return 'PlayerRouteArgs{key: $key, player: $player}';
   }
 }
 

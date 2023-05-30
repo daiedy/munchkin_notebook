@@ -7,8 +7,26 @@ class Player {
   String name;
   Gender gender;
   Color color;
-  int bonus = 0;
-  int level = 1;
+  int _bonus = 0;
+  int _level = 1;
 
+  void decrementLevel() {
+    if (_level > 0) _level--;
+  }
+
+  void incrementLevel() {
+    _level++;
+  }
+
+  void decrementBonus() {
+    if (_bonus > 0) _bonus--;
+  }
+
+  void incrementBonus() {
+    _bonus++;
+  }
+
+  int get level => _level;
+  int get bonus => _bonus;
   int get strength => level + bonus;
 }

@@ -26,7 +26,6 @@ class GamePage extends StatelessWidget {
                   : Expanded(
                       child: GameBody(
                       players: state.game.getPlayers,
-                      maxLevel: state.game.maxLevel,
                     ));
             } else {
               return Text(AppLocalizations.of(context)!.game_not_created);

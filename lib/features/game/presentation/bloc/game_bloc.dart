@@ -21,9 +21,7 @@ class GameBloc extends Bloc<GameEvent, GameState> {
         _game!.addPlayer(
             Player(name: event.name, gender: event.gender, color: event.color));
         emit(GameCreated(_game!));
-      } else if (event is ChangePlayerStats) {
-        event.player.level = event.level;
-        event.player.bonus = event.bonus;
+      } else if (event is ChangePlayer) {
         emit(GameCreated(_game!));
       }
     });
