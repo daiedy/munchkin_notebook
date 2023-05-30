@@ -9,17 +9,22 @@ part 'game_event.dart';
 part 'game_state.dart';
 
 class GameBloc extends Bloc<GameEvent, GameState> {
-  Game? game;
+  Game? _game;
 
   GameBloc() : super(GameNotReady()) {
     on<GameEvent>((event, emit) {
       if (event is CreateGame) {
-        game = Game(maxLevel: event.maxLevel, selfCounting: event.selfCounting);
-        emit(GameCreated(game!));
+        _game =
+            Game(maxLevel: event.maxLevel, selfCounting: event.selfCounting);
+        emit(GameCreated(_game!));
       } else if (event is AddPlayer) {
-        game!.addPlayer(
+        _game!.addPlayer(
             Player(name: event.name, gender: event.gender, color: event.color));
-        emit(GameCreated(game!));
+        emit(GameCreated(_game!));
+      } else if (event is ChangePlayerStats) {
+        event.player.level = event.level;
+        event.player.bonus = event.bonus;
+        emit(GameCreated(_game!));
       }
     });
   }

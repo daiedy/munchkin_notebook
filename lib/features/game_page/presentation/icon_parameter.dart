@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:munchkin_notebook1/features/parameter_text/parameter_text.dart';
 
 class IconParameter extends StatelessWidget {
@@ -11,7 +12,7 @@ class IconParameter extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Image.asset(iconPath),
+        SvgPicture.asset(iconPath, height: 20),
         const SizedBox(width: 5),
         ParameterText(value.toString()),
       ],

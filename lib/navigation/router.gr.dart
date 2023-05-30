@@ -8,12 +8,12 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:auto_route/auto_route.dart' as _i12;
-import 'package:flutter/material.dart' as _i13;
+import 'package:auto_route/auto_route.dart' as _i13;
+import 'package:flutter/material.dart' as _i14;
 import 'package:munchkin_notebook1/features/choose_color_page/presentation/choose_color_page.dart'
     as _i1;
 import 'package:munchkin_notebook1/features/choose_gender_page/gender.dart'
-    as _i14;
+    as _i15;
 import 'package:munchkin_notebook1/features/choose_gender_page/presentation/choose_gender_page.dart'
     as _i2;
 import 'package:munchkin_notebook1/features/create_game_page/presentation/create_game_page.dart'
@@ -22,6 +22,8 @@ import 'package:munchkin_notebook1/features/enter_code/presentation/enter_code.d
     as _i4;
 import 'package:munchkin_notebook1/features/enter_name_page/presentation/enter_name_page.dart'
     as _i5;
+import 'package:munchkin_notebook1/features/game/domain/entities/player.dart'
+    as _i16;
 import 'package:munchkin_notebook1/features/game_options_page/presentation/game_options_page.dart'
     as _i6;
 import 'package:munchkin_notebook1/features/game_page/presentation/game_page.dart'
@@ -29,20 +31,22 @@ import 'package:munchkin_notebook1/features/game_page/presentation/game_page.dar
 import 'package:munchkin_notebook1/features/join_game/presentation/join_game.dart'
     as _i8;
 import 'package:munchkin_notebook1/features/list_of_players_page/presentation/list_of_players_page.dart'
-    as _i11;
-import 'package:munchkin_notebook1/features/max_level_page/presentation/max_level_page.dart'
     as _i9;
-import 'package:munchkin_notebook1/features/self_counting/presentation/self_counting.dart'
+import 'package:munchkin_notebook1/features/max_level_page/presentation/max_level_page.dart'
     as _i10;
+import 'package:munchkin_notebook1/features/player_page/presentation/player_page.dart'
+    as _i11;
+import 'package:munchkin_notebook1/features/self_counting/presentation/self_counting.dart'
+    as _i12;
 
-abstract class $AppRouter extends _i12.RootStackRouter {
+abstract class $AppRouter extends _i13.RootStackRouter {
   $AppRouter({super.navigatorKey});
 
   @override
-  final Map<String, _i12.PageFactory> pagesMap = {
+  final Map<String, _i13.PageFactory> pagesMap = {
     ChooseColorRoute.name: (routeData) {
       final args = routeData.argsAs<ChooseColorRouteArgs>();
-      return _i12.AutoRoutePage<dynamic>(
+      return _i13.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: _i1.ChooseColorPage(
           key: args.key,
@@ -53,7 +57,7 @@ abstract class $AppRouter extends _i12.RootStackRouter {
     },
     ChooseGenderRoute.name: (routeData) {
       final args = routeData.argsAs<ChooseGenderRouteArgs>();
-      return _i12.AutoRoutePage<dynamic>(
+      return _i13.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: _i2.ChooseGenderPage(
           key: args.key,
@@ -62,61 +66,72 @@ abstract class $AppRouter extends _i12.RootStackRouter {
       );
     },
     CreateGameRoute.name: (routeData) {
-      return _i12.AutoRoutePage<dynamic>(
+      return _i13.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i3.CreateGamePage(),
       );
     },
     EnterCodeRoute.name: (routeData) {
-      return _i12.AutoRoutePage<dynamic>(
+      return _i13.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i4.EnterCodePage(),
       );
     },
     EnterNameRoute.name: (routeData) {
-      return _i12.AutoRoutePage<dynamic>(
+      return _i13.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i5.EnterNamePage(),
       );
     },
     GameOptionsRoute.name: (routeData) {
-      return _i12.AutoRoutePage<dynamic>(
+      return _i13.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i6.GameOptionsPage(),
       );
     },
     GameRoute.name: (routeData) {
-      return _i12.AutoRoutePage<dynamic>(
+      return _i13.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i7.GamePage(),
       );
     },
     JoinGameRoute.name: (routeData) {
-      return _i12.AutoRoutePage<dynamic>(
+      return _i13.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i8.JoinGamePage(),
       );
     },
-    MaxLevelRoute.name: (routeData) {
-      return _i12.AutoRoutePage<dynamic>(
+    ListOfPlayersRoute.name: (routeData) {
+      return _i13.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i9.MaxLevelPage(),
+        child: const _i9.ListOfPlayersPage(),
       );
     },
-    SelfCountingRoute.name: (routeData) {
-      final args = routeData.argsAs<SelfCountingRouteArgs>();
-      return _i12.AutoRoutePage<dynamic>(
+    MaxLevelRoute.name: (routeData) {
+      return _i13.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i10.SelfCountingPage(
+        child: const _i10.MaxLevelPage(),
+      );
+    },
+    PlayerRoute.name: (routeData) {
+      final args = routeData.argsAs<PlayerRouteArgs>();
+      return _i13.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: _i11.PlayerPage(
           key: args.key,
+          player: args.player,
           maxLevel: args.maxLevel,
         ),
       );
     },
-    ListOfPlayersRoute.name: (routeData) {
-      return _i12.AutoRoutePage<dynamic>(
+    SelfCountingRoute.name: (routeData) {
+      final args = routeData.argsAs<SelfCountingRouteArgs>();
+      return _i13.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i11.ListOfPlayersPage(),
+        child: _i12.SelfCountingPage(
+          key: args.key,
+          maxLevel: args.maxLevel,
+        ),
       );
     },
   };
@@ -124,12 +139,12 @@ abstract class $AppRouter extends _i12.RootStackRouter {
 
 /// generated route for
 /// [_i1.ChooseColorPage]
-class ChooseColorRoute extends _i12.PageRouteInfo<ChooseColorRouteArgs> {
+class ChooseColorRoute extends _i13.PageRouteInfo<ChooseColorRouteArgs> {
   ChooseColorRoute({
-    _i13.Key? key,
+    _i14.Key? key,
     required String playerName,
-    required _i14.Gender playerGender,
-    List<_i12.PageRouteInfo>? children,
+    required _i15.Gender playerGender,
+    List<_i13.PageRouteInfo>? children,
   }) : super(
           ChooseColorRoute.name,
           args: ChooseColorRouteArgs(
@@ -142,8 +157,8 @@ class ChooseColorRoute extends _i12.PageRouteInfo<ChooseColorRouteArgs> {
 
   static const String name = 'ChooseColorRoute';
 
-  static const _i12.PageInfo<ChooseColorRouteArgs> page =
-      _i12.PageInfo<ChooseColorRouteArgs>(name);
+  static const _i13.PageInfo<ChooseColorRouteArgs> page =
+      _i13.PageInfo<ChooseColorRouteArgs>(name);
 }
 
 class ChooseColorRouteArgs {
@@ -153,11 +168,11 @@ class ChooseColorRouteArgs {
     required this.playerGender,
   });
 
-  final _i13.Key? key;
+  final _i14.Key? key;
 
   final String playerName;
 
-  final _i14.Gender playerGender;
+  final _i15.Gender playerGender;
 
   @override
   String toString() {
@@ -167,11 +182,11 @@ class ChooseColorRouteArgs {
 
 /// generated route for
 /// [_i2.ChooseGenderPage]
-class ChooseGenderRoute extends _i12.PageRouteInfo<ChooseGenderRouteArgs> {
+class ChooseGenderRoute extends _i13.PageRouteInfo<ChooseGenderRouteArgs> {
   ChooseGenderRoute({
-    _i13.Key? key,
+    _i14.Key? key,
     required String playerName,
-    List<_i12.PageRouteInfo>? children,
+    List<_i13.PageRouteInfo>? children,
   }) : super(
           ChooseGenderRoute.name,
           args: ChooseGenderRouteArgs(
@@ -183,8 +198,8 @@ class ChooseGenderRoute extends _i12.PageRouteInfo<ChooseGenderRouteArgs> {
 
   static const String name = 'ChooseGenderRoute';
 
-  static const _i12.PageInfo<ChooseGenderRouteArgs> page =
-      _i12.PageInfo<ChooseGenderRouteArgs>(name);
+  static const _i13.PageInfo<ChooseGenderRouteArgs> page =
+      _i13.PageInfo<ChooseGenderRouteArgs>(name);
 }
 
 class ChooseGenderRouteArgs {
@@ -193,7 +208,7 @@ class ChooseGenderRouteArgs {
     required this.playerName,
   });
 
-  final _i13.Key? key;
+  final _i14.Key? key;
 
   final String playerName;
 
@@ -205,8 +220,8 @@ class ChooseGenderRouteArgs {
 
 /// generated route for
 /// [_i3.CreateGamePage]
-class CreateGameRoute extends _i12.PageRouteInfo<void> {
-  const CreateGameRoute({List<_i12.PageRouteInfo>? children})
+class CreateGameRoute extends _i13.PageRouteInfo<void> {
+  const CreateGameRoute({List<_i13.PageRouteInfo>? children})
       : super(
           CreateGameRoute.name,
           initialChildren: children,
@@ -214,13 +229,13 @@ class CreateGameRoute extends _i12.PageRouteInfo<void> {
 
   static const String name = 'CreateGameRoute';
 
-  static const _i12.PageInfo<void> page = _i12.PageInfo<void>(name);
+  static const _i13.PageInfo<void> page = _i13.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i4.EnterCodePage]
-class EnterCodeRoute extends _i12.PageRouteInfo<void> {
-  const EnterCodeRoute({List<_i12.PageRouteInfo>? children})
+class EnterCodeRoute extends _i13.PageRouteInfo<void> {
+  const EnterCodeRoute({List<_i13.PageRouteInfo>? children})
       : super(
           EnterCodeRoute.name,
           initialChildren: children,
@@ -228,13 +243,13 @@ class EnterCodeRoute extends _i12.PageRouteInfo<void> {
 
   static const String name = 'EnterCodeRoute';
 
-  static const _i12.PageInfo<void> page = _i12.PageInfo<void>(name);
+  static const _i13.PageInfo<void> page = _i13.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i5.EnterNamePage]
-class EnterNameRoute extends _i12.PageRouteInfo<void> {
-  const EnterNameRoute({List<_i12.PageRouteInfo>? children})
+class EnterNameRoute extends _i13.PageRouteInfo<void> {
+  const EnterNameRoute({List<_i13.PageRouteInfo>? children})
       : super(
           EnterNameRoute.name,
           initialChildren: children,
@@ -242,13 +257,13 @@ class EnterNameRoute extends _i12.PageRouteInfo<void> {
 
   static const String name = 'EnterNameRoute';
 
-  static const _i12.PageInfo<void> page = _i12.PageInfo<void>(name);
+  static const _i13.PageInfo<void> page = _i13.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i6.GameOptionsPage]
-class GameOptionsRoute extends _i12.PageRouteInfo<void> {
-  const GameOptionsRoute({List<_i12.PageRouteInfo>? children})
+class GameOptionsRoute extends _i13.PageRouteInfo<void> {
+  const GameOptionsRoute({List<_i13.PageRouteInfo>? children})
       : super(
           GameOptionsRoute.name,
           initialChildren: children,
@@ -256,13 +271,13 @@ class GameOptionsRoute extends _i12.PageRouteInfo<void> {
 
   static const String name = 'GameOptionsRoute';
 
-  static const _i12.PageInfo<void> page = _i12.PageInfo<void>(name);
+  static const _i13.PageInfo<void> page = _i13.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i7.GamePage]
-class GameRoute extends _i12.PageRouteInfo<void> {
-  const GameRoute({List<_i12.PageRouteInfo>? children})
+class GameRoute extends _i13.PageRouteInfo<void> {
+  const GameRoute({List<_i13.PageRouteInfo>? children})
       : super(
           GameRoute.name,
           initialChildren: children,
@@ -270,13 +285,13 @@ class GameRoute extends _i12.PageRouteInfo<void> {
 
   static const String name = 'GameRoute';
 
-  static const _i12.PageInfo<void> page = _i12.PageInfo<void>(name);
+  static const _i13.PageInfo<void> page = _i13.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i8.JoinGamePage]
-class JoinGameRoute extends _i12.PageRouteInfo<void> {
-  const JoinGameRoute({List<_i12.PageRouteInfo>? children})
+class JoinGameRoute extends _i13.PageRouteInfo<void> {
+  const JoinGameRoute({List<_i13.PageRouteInfo>? children})
       : super(
           JoinGameRoute.name,
           initialChildren: children,
@@ -284,13 +299,27 @@ class JoinGameRoute extends _i12.PageRouteInfo<void> {
 
   static const String name = 'JoinGameRoute';
 
-  static const _i12.PageInfo<void> page = _i12.PageInfo<void>(name);
+  static const _i13.PageInfo<void> page = _i13.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i9.MaxLevelPage]
-class MaxLevelRoute extends _i12.PageRouteInfo<void> {
-  const MaxLevelRoute({List<_i12.PageRouteInfo>? children})
+/// [_i9.ListOfPlayersPage]
+class ListOfPlayersRoute extends _i13.PageRouteInfo<void> {
+  const ListOfPlayersRoute({List<_i13.PageRouteInfo>? children})
+      : super(
+          ListOfPlayersRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'ListOfPlayersRoute';
+
+  static const _i13.PageInfo<void> page = _i13.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i10.MaxLevelPage]
+class MaxLevelRoute extends _i13.PageRouteInfo<void> {
+  const MaxLevelRoute({List<_i13.PageRouteInfo>? children})
       : super(
           MaxLevelRoute.name,
           initialChildren: children,
@@ -298,16 +327,59 @@ class MaxLevelRoute extends _i12.PageRouteInfo<void> {
 
   static const String name = 'MaxLevelRoute';
 
-  static const _i12.PageInfo<void> page = _i12.PageInfo<void>(name);
+  static const _i13.PageInfo<void> page = _i13.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i10.SelfCountingPage]
-class SelfCountingRoute extends _i12.PageRouteInfo<SelfCountingRouteArgs> {
-  SelfCountingRoute({
-    _i13.Key? key,
+/// [_i11.PlayerPage]
+class PlayerRoute extends _i13.PageRouteInfo<PlayerRouteArgs> {
+  PlayerRoute({
+    _i14.Key? key,
+    required _i16.Player player,
     required int maxLevel,
-    List<_i12.PageRouteInfo>? children,
+    List<_i13.PageRouteInfo>? children,
+  }) : super(
+          PlayerRoute.name,
+          args: PlayerRouteArgs(
+            key: key,
+            player: player,
+            maxLevel: maxLevel,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'PlayerRoute';
+
+  static const _i13.PageInfo<PlayerRouteArgs> page =
+      _i13.PageInfo<PlayerRouteArgs>(name);
+}
+
+class PlayerRouteArgs {
+  const PlayerRouteArgs({
+    this.key,
+    required this.player,
+    required this.maxLevel,
+  });
+
+  final _i14.Key? key;
+
+  final _i16.Player player;
+
+  final int maxLevel;
+
+  @override
+  String toString() {
+    return 'PlayerRouteArgs{key: $key, player: $player, maxLevel: $maxLevel}';
+  }
+}
+
+/// generated route for
+/// [_i12.SelfCountingPage]
+class SelfCountingRoute extends _i13.PageRouteInfo<SelfCountingRouteArgs> {
+  SelfCountingRoute({
+    _i14.Key? key,
+    required int maxLevel,
+    List<_i13.PageRouteInfo>? children,
   }) : super(
           SelfCountingRoute.name,
           args: SelfCountingRouteArgs(
@@ -319,8 +391,8 @@ class SelfCountingRoute extends _i12.PageRouteInfo<SelfCountingRouteArgs> {
 
   static const String name = 'SelfCountingRoute';
 
-  static const _i12.PageInfo<SelfCountingRouteArgs> page =
-      _i12.PageInfo<SelfCountingRouteArgs>(name);
+  static const _i13.PageInfo<SelfCountingRouteArgs> page =
+      _i13.PageInfo<SelfCountingRouteArgs>(name);
 }
 
 class SelfCountingRouteArgs {
@@ -329,7 +401,7 @@ class SelfCountingRouteArgs {
     required this.maxLevel,
   });
 
-  final _i13.Key? key;
+  final _i14.Key? key;
 
   final int maxLevel;
 
@@ -337,18 +409,4 @@ class SelfCountingRouteArgs {
   String toString() {
     return 'SelfCountingRouteArgs{key: $key, maxLevel: $maxLevel}';
   }
-}
-
-/// generated route for
-/// [_i11.ListOfPlayersPage]
-class ListOfPlayersRoute extends _i12.PageRouteInfo<void> {
-  const ListOfPlayersRoute({List<_i12.PageRouteInfo>? children})
-      : super(
-          ListOfPlayersRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'ListOfPlayersRoute';
-
-  static const _i12.PageInfo<void> page = _i12.PageInfo<void>(name);
 }
