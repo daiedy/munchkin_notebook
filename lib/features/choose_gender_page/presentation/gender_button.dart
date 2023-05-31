@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:munchkin_notebook1/core/ui/constants/app_colors.dart';
 
 class GenderButton extends StatelessWidget {
@@ -19,7 +20,7 @@ class GenderButton extends StatelessWidget {
       onTap: onTap,
       child: Opacity(
         opacity: selected ? 1 : 0.5,
-        child: Image.asset(logoPath, color: AppColors.contentColor),
+        child: SvgPicture.asset(logoPath),
       ),
     );
   }

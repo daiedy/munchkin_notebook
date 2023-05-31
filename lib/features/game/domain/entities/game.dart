@@ -16,4 +16,8 @@ class Game {
   void addPlayer(Player player) {
     _players.add(player);
   }
+
+  Player getPlayer(int playerId) {
+    return _players.firstWhere((player) => player.id == playerId);
+  }
 }

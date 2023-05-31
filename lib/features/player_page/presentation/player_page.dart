@@ -15,7 +15,7 @@ import 'package:munchkin_notebook1/navigation/router.gr.dart';
 
 @RoutePage()
 class PlayerPage extends StatelessWidget {
-  PlayerPage({super.key, required this.player});
+  const PlayerPage({super.key, required this.player});
 
   final Player player;
 
@@ -35,14 +35,14 @@ class PlayerPage extends StatelessWidget {
                     imgPath: AppLocalizations.of(context)!.level_icon,
                     title: AppLocalizations.of(context)!.level,
                     increment: () {
-                      if (player.level < state.game.maxLevel) {
-                        player.incrementLevel();
-                        gameBloc.add(ChangePlayer(player));
-                      }
+                      gameBloc.add(ChangePlayerLevel(
+                          playerId: player.id,
+                          level: state.game.getPlayer(player.id).level + 1));
                     },
                     decrement: () {
-                      player.decrementLevel();
-                      gameBloc.add(ChangePlayer(player));
+                      gameBloc.add(ChangePlayerLevel(
+                          playerId: player.id,
+                          level: state.game.getPlayer(player.id).level - 1));
                     },
                     number: player.level,
                   );
@@ -61,12 +61,14 @@ class PlayerPage extends StatelessWidget {
                     imgPath: AppLocalizations.of(context)!.bonus_icon,
                     title: AppLocalizations.of(context)!.bonus,
                     increment: () {
-                      player.incrementBonus();
-                      gameBloc.add(ChangePlayer(player));
+                      gameBloc.add(ChangePlayerBonus(
+                          playerId: player.id,
+                          bonus: state.game.getPlayer(player.id).bonus + 1));
                     },
                     decrement: () {
-                      player.decrementBonus();
-                      gameBloc.add(ChangePlayer(player));
+                      gameBloc.add(ChangePlayerBonus(
+                          playerId: player.id,
+                          bonus: state.game.getPlayer(player.id).bonus - 1));
                     },
                     number: player.bonus,
                   );

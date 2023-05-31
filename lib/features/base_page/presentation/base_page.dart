@@ -15,29 +15,32 @@ class BasePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-        child: Container(
-            decoration: BoxDecoration(
-                color: AppColors.appBackGround,
-                border: Border.all(color: AppColors.contentColor, width: 10),
-                borderRadius: BorderRadius.circular(40)),
-            child: Container(
-              padding: const EdgeInsets.all(20),
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(20),
-                    child: Text(
-                      title,
-                      textAlign: TextAlign.center,
-                      style:
-                          const TextStyle(fontSize: 32, fontFamily: 'Munchkin'),
+        color: AppColors.contentColor,
+        child: Padding(
+          padding: const EdgeInsets.all(15),
+          child: Container(
+              decoration: BoxDecoration(
+                  color: AppColors.appBackGround,
+                  borderRadius: BorderRadius.circular(40)),
+              child: Container(
+                padding: const EdgeInsets.all(20),
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(20),
+                      child: Text(
+                        title,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                            fontSize: 32, fontFamily: 'Munchkin'),
+                      ),
                     ),
-                  ),
-                  body,
-                  const Spacer(),
-                  actions,
-                ],
-              ),
-            )));
+                    body,
+                    const Spacer(),
+                    actions,
+                  ],
+                ),
+              )),
+        ));
   }
 }
