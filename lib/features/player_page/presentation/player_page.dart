@@ -44,7 +44,7 @@ class PlayerPage extends StatelessWidget {
                           playerId: player.id,
                           level: state.game.getPlayer(player.id).level - 1));
                     },
-                    number: player.level,
+                    number: state.game.getPlayer(player.id).level,
                   );
                 } else {
                   return Container();
@@ -70,7 +70,7 @@ class PlayerPage extends StatelessWidget {
                           playerId: player.id,
                           bonus: state.game.getPlayer(player.id).bonus - 1));
                     },
-                    number: player.bonus,
+                    number: state.game.getPlayer(player.id).bonus,
                   );
                 } else {
                   return Container();
@@ -99,7 +99,8 @@ class PlayerPage extends StatelessWidget {
                       bloc: gameBloc,
                       builder: (context, state) {
                         if (state is GameCreated) {
-                          return NumberText(player.strength);
+                          return NumberText(
+                              state.game.getPlayer(player.id).strength);
                         } else {
                           return Container();
                         }
