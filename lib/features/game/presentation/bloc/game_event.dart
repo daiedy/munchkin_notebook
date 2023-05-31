@@ -17,3 +17,17 @@ class AddPlayer extends GameEvent {
 
   AddPlayer({required this.name, required this.gender, required this.color});
 }
+
+class ChangePlayerLevel extends GameEvent {
+  final int playerId;
+  final int level;
+
+  ChangePlayerLevel({required this.playerId, required this.level});
+}
+
+class ChangePlayerBonus extends GameEvent {
+  final int playerId;
+  final int bonus;
+
+  ChangePlayerBonus({required this.playerId, required this.bonus});
+}

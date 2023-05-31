@@ -23,8 +23,8 @@
     "chikibryak": "assets/images/chikibryak.png",
     "choose_gender_title": "Выберите пол",
     "back_to_enter_name_button": "Вернуться к вводу имени",
-    "maleLogo": "assets/images/male.png",
-    "femaleLogo": "assets/images/female.png",
+    "maleLogo": "assets/images/male.svg",
+    "femaleLogo": "assets/images/female.svg",
     "choose_color_title": "Выберите цвет",
     "back_to_choose_gender_button": "Вернуться к выбору пола",
     "game_title": "Игра",
@@ -43,7 +43,10 @@
     "same_name_error": "Игрок с таким именем уже существует",
     "enter_text_error": "Введите имя",
     "max_players_error": "Создано максимальное количество игроков",
-    "bonus_icon": "assets/images/bonus.png",
-    "strength_icon": "assets/images/strength.png",
-    "level_icon": "assets/images/star.png"
+    "bonus_icon": "assets/images/bonus.svg",
+    "strength_icon": "assets/images/strength.svg",
+    "level_icon": "assets/images/star.svg",
+    "level": "Уровень",
+    "bonus": "Бонусы",
+    "strength": "Сила"
 }

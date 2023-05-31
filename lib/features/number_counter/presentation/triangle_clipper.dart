@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 enum TriangleDirection { right, left }
 
-class CustomTriangleClipper extends CustomClipper<Path> {
-  CustomTriangleClipper({required this.triangleDirection});
+class TriangleClipper extends CustomClipper<Path> {
+  TriangleClipper({required this.triangleDirection});
 
   TriangleDirection triangleDirection;
 

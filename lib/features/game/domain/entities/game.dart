@@ -8,11 +8,16 @@ class Game {
   final List<Player> _players = [];
 
   List<Player> get getPlayers => _players;
+  bool get isEmptyGame => _players.length <= 1;
 
   bool hasSameName(String name) =>
       _players.indexWhere((player) => player.name == name) > 0;
 
   void addPlayer(Player player) {
     _players.add(player);
+  }
+
+  Player getPlayer(int playerId) {
+    return _players.firstWhere((player) => player.id == playerId);
   }
 }

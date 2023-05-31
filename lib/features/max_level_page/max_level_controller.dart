@@ -9,6 +9,12 @@ class MaxLevelController {
 
   int getLevel() => _currentLevel;
 
+  Function(int)? _onChangedMaxLevel;
+
+  void setChangedMaxLevel(Function(int) onChangedMaxLevel) {
+    _onChangedMaxLevel = onChangedMaxLevel;
+  }
+
   void setLevel(int value) {
     if (value >= MaxLevelController._maxLevel &&
         value <= MaxLevelController._minLevel) {
@@ -18,13 +24,13 @@ class MaxLevelController {
 
   void incrementLevel() {
     if (_currentLevel < MaxLevelController._maxLevel) {
-      _currentLevel++;
+      _onChangedMaxLevel?.call(++_currentLevel);
     }
   }
 
   void decrementLevel() {
     if (_currentLevel > MaxLevelController._minLevel) {
-      _currentLevel--;
+      _onChangedMaxLevel?.call(--_currentLevel);
     }
   }
 }

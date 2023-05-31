@@ -12,7 +12,7 @@ class IconParameter extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Image.asset(iconPath),
+        SvgPicture.asset(iconPath, height: 20),
         const SizedBox(width: 5),
         ParameterText(value.toString()),
       ],

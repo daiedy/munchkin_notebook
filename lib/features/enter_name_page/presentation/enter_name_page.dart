@@ -43,7 +43,7 @@ class _EnterNamePageState extends State<EnterNamePage> {
               child: BlocBuilder(
                   bloc: gameBloc,
                   builder: (context, state) {
-                    if (state is EmptyGame) {
+                    if (state is GameCreated) {
                       return Form(
                         key: _formKey,
                         child: TextFormField(
