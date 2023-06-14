@@ -18,7 +18,7 @@ class GameBloc extends Bloc<GameEvent, GameState> {
             Game(maxLevel: event.maxLevel, selfCounting: event.selfCounting);
         emit(GameCreated(_game!));
       } else if (event is AddPlayer) {
-        _game!.addPlayer(Player(
+        _game = _game!.addPlayer(Player(
             name: event.name,
             gender: event.gender,
             color: event.color,
@@ -26,11 +26,17 @@ class GameBloc extends Bloc<GameEvent, GameState> {
         emit(GameCreated(_game!));
       } else if (event is ChangePlayerLevel) {
         if (event.level > 1 && event.level < _game!.maxLevel) {
-          _game!.getPlayer(event.playerId).level = event.level;
+          _game!.changePlayer(
+            playerId: event.playerId,
+            level: event.level,
+          );
         }
         emit(GameCreated(_game!));
       } else if (event is ChangePlayerBonus) {
-        _game!.getPlayer(event.playerId).bonus = event.bonus;
+        _game!.changePlayer(
+          playerId: event.playerId,
+          bonus: event.bonus,
+        );
         emit(GameCreated(_game!));
       }
     });
