@@ -33,12 +33,13 @@ class Game {
     return players.firstWhere((player) => player.id == playerId);
   }
 
-  void changePlayer({required int playerId, int? level, int? bonus}) {
+  Game changePlayer({required int playerId, int? level, int? bonus}) {
     Player player = getPlayer(playerId);
     int index = players.indexOf(player);
     players[index] = player.copyWith(
       level: level,
       bonus: bonus,
     );
+    return copyWith(players: players);
   }
 }
