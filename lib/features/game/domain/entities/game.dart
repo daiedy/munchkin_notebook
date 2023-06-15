@@ -1,23 +1,44 @@
 import 'package:munchkin_notebook1/features/game/domain/entities/player.dart';
 
 class Game {
-  Game({required this.maxLevel, required this.selfCounting});
+  Game(
+      {this.maxLevel = 10, this.selfCounting = false, this.players = const []});
 
-  int maxLevel = 10;
-  bool selfCounting = false;
-  final List<Player> _players = [];
+  final int maxLevel;
+  final bool selfCounting;
+  final List<Player> players;
 
-  List<Player> get getPlayers => _players;
-  bool get isEmptyGame => _players.length <= 1;
+  List<Player> get getPlayers => players;
+  bool get isEmptyGame => players.length <= 1;
 
   bool hasSameName(String name) =>
-      _players.indexWhere((player) => player.name == name) > 0;
+      players.indexWhere((player) => player.name == name) > 0;
 
-  void addPlayer(Player player) {
-    _players.add(player);
+  Game addPlayer(Player player) {
+    return copyWith(players: [...players, player]);
   }
 
+  Game copyWith({
+    int? maxLevel,
+    bool? selfCounting,
+    List<Player>? players,
+  }) =>
+      Game(
+        maxLevel: maxLevel ?? this.maxLevel,
+        selfCounting: selfCounting ?? this.selfCounting,
+        players: players ?? this.players,
+      );
+
   Player getPlayer(int playerId) {
-    return _players.firstWhere((player) => player.id == playerId);
+    return players.firstWhere((player) => player.id == playerId);
+  }
+
+  void changePlayer({required int playerId, int? level, int? bonus}) {
+    Player player = getPlayer(playerId);
+    int index = players.indexOf(player);
+    players[index] = player.copyWith(
+      level: level,
+      bonus: bonus,
+    );
   }
 }
