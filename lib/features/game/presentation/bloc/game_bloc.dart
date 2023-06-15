@@ -26,14 +26,14 @@ class GameBloc extends Bloc<GameEvent, GameState> {
         emit(GameCreated(_game!));
       } else if (event is ChangePlayerLevel) {
         if (event.level > 1 && event.level < _game!.maxLevel) {
-          _game!.changePlayer(
+          _game = _game!.changePlayer(
             playerId: event.playerId,
             level: event.level,
           );
+          emit(GameCreated(_game!));
         }
-        emit(GameCreated(_game!));
       } else if (event is ChangePlayerBonus) {
-        _game!.changePlayer(
+        _game = _game!.changePlayer(
           playerId: event.playerId,
           bonus: event.bonus,
         );
