@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:munchkin_notebook1/features/choose_gender_page/gender.dart';
+import 'package:munchkin_notebook1/features/choose_gender_page/presentation/controllers/gender.dart';
 
 class Player {
   Player(

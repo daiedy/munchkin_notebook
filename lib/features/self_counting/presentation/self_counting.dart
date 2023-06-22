@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:munchkin_notebook1/core/ui/constants/app_colors.dart';
 import 'package:munchkin_notebook1/features/base_page/presentation/base_page.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:munchkin_notebook1/features/common_text/presentation/common_text.dart';
+import 'package:munchkin_notebook1/core/ui/widgets/common_text.dart';
 import 'package:munchkin_notebook1/features/game/presentation/bloc/game_bloc.dart';
-import 'package:munchkin_notebook1/features/primary_button/presentation/primary_button.dart';
-import 'package:munchkin_notebook1/features/secondary_button/presentation/secondary_button.dart';
+import 'package:munchkin_notebook1/core/ui/widgets/primary_button.dart';
+import 'package:munchkin_notebook1/core/ui/widgets/secondary_button.dart';
 import 'package:munchkin_notebook1/main.dart';
 import 'package:munchkin_notebook1/navigation/router.gr.dart';
 
