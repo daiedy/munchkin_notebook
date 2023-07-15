@@ -40,8 +40,9 @@ class GameOptionsPage extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 10),
                       child: ParameterMore(
-                        body: ParameterText(
-                            "${AppLocalizations.of(context)!.players_number}: ${state.game.getPlayers.length}"),
+                        body: ParameterText(AppLocalizations.of(context)!
+                            .players_number(
+                                state.game.getPlayers.length.toString())),
                         onPress: () {
                           AutoRouter.of(context)
                               .navigate(const ListOfPlayersRoute());
@@ -51,8 +52,8 @@ class GameOptionsPage extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 10),
                       child: ParameterMore(
-                        body: ParameterText(
-                            "${AppLocalizations.of(context)!.max_level}: ${state.game.maxLevel}"),
+                        body: ParameterText(AppLocalizations.of(context)!
+                            .max_level(state.game.maxLevel.toString())),
                       ),
                     ),
                     Padding(
