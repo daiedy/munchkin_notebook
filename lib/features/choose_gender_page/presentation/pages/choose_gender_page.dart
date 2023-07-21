@@ -12,6 +12,10 @@ import '../../../../core/ui/constants/app_colors.dart';
 
 @RoutePage()
 class ChooseGenderPage extends StatelessWidget {
+  static const double plugWidth = 120;
+  static const double plugHeight = 160;
+  static const double genderHorizontalPadding = 50;
+
   ChooseGenderPage({super.key, required this.playerName});
 
   final String playerName;
@@ -24,12 +28,13 @@ class ChooseGenderPage extends StatelessWidget {
         body: Column(
           children: [
             Container(
-              width: 120,
-              height: 160,
+              width: plugWidth,
+              height: plugHeight,
               color: AppColors.stub,
             ),
             Padding(
-                padding: const EdgeInsets.symmetric(vertical: 50),
+                padding: const EdgeInsets.symmetric(
+                    vertical: genderHorizontalPadding),
                 child: GenderButtonsGroup(controller: _genderController))
           ],
         ),

@@ -11,15 +11,14 @@ class GameCodeInput extends StatelessWidget {
   static const double inputWidth = 56;
   static const double inputHeight = 56;
   static const double underlineWidth = 3;
-
-  static const _focusedPinTheme = PinTheme(
-      width: inputWidth,
-      height: inputHeight,
-      textStyle: TextStyle(fontSize: 48, color: AppColors.contentColor));
+  static const textStyle =
+      TextStyle(fontSize: 48, color: AppColors.contentColor);
+  static const _focusedPinTheme =
+      PinTheme(width: inputWidth, height: inputHeight, textStyle: textStyle);
   static const _defaultPinTheme = PinTheme(
       width: inputWidth,
       height: inputHeight,
-      textStyle: TextStyle(fontSize: 48, color: AppColors.contentColor),
+      textStyle: textStyle,
       decoration: BoxDecoration(
           border: Border(bottom: BorderSide(width: underlineWidth))));
   static final _cursor = Column(

@@ -1,4 +1,4 @@
-import 'package:munchkin_notebook1/features/choose_gender_page/presentation/controllers/gender.dart';
+import '../../../game/domain/entities/player.dart';
 
 class GenderController {
   static const Gender _defaultGender = Gender.male;

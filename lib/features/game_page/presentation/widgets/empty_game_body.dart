@@ -4,6 +4,9 @@ import 'package:munchkin_notebook1/core/ui/constants/app_colors.dart';
 import '../../../../core/ui/widgets/common_text.dart';
 
 class EmptyGameBody extends StatelessWidget {
+  static const double plugWidth = 120;
+  static const double plugHeight = 160;
+
   const EmptyGameBody({super.key});
 
   @override

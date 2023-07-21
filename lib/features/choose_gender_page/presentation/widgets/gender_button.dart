@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:munchkin_notebook1/core/ui/constants/app_colors.dart';
 
 class GenderButton extends StatelessWidget {
   const GenderButton(

@@ -2,7 +2,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:munchkin_notebook1/core/ui/constants/app_colors.dart';
 import 'package:munchkin_notebook1/features/base_page/presentation/base_page.dart';
 import 'package:munchkin_notebook1/features/game/presentation/bloc/game_bloc.dart';
@@ -21,6 +20,14 @@ class EnterNamePage extends StatefulWidget {
 }
 
 class _EnterNamePageState extends State<EnterNamePage> {
+  static const double beforeInputPadding = 80;
+  static const maxInputLength = 10;
+  static const enabledBorder = UnderlineInputBorder(
+      borderSide: BorderSide(color: AppColors.contentColor, width: 3));
+  static const focusedBorder = UnderlineInputBorder(
+      borderSide: BorderSide(color: AppColors.contentColor, width: 5));
+  static const nameTextStyle = TextStyle(fontSize: 36);
+
   TextEditingController nameController = TextEditingController();
 
   final _formKey = GlobalKey<FormState>();
@@ -39,7 +46,7 @@ class _EnterNamePageState extends State<EnterNamePage> {
         body: Column(children: [
           ImageWidget(AppLocalizations.of(context)!.chikibryak),
           Padding(
-              padding: const EdgeInsets.only(top: 80),
+              padding: const EdgeInsets.only(top: beforeInputPadding),
               child: BlocBuilder(
                   bloc: gameBloc,
                   builder: (context, state) {
@@ -48,7 +55,7 @@ class _EnterNamePageState extends State<EnterNamePage> {
                         key: _formKey,
                         child: TextFormField(
                             controller: nameController,
-                            maxLength: 10,
+                            maxLength: maxInputLength,
                             validator: (value) {
                               if (value == null || value == "") {
                                 return AppLocalizations.of(context)!
@@ -61,19 +68,13 @@ class _EnterNamePageState extends State<EnterNamePage> {
                               }
                             },
                             decoration: InputDecoration(
-                                enabledBorder: const UnderlineInputBorder(
-                                    borderSide: BorderSide(
-                                        color: AppColors.contentColor,
-                                        width: 3)),
-                                focusedBorder: const UnderlineInputBorder(
-                                    borderSide: BorderSide(
-                                        color: AppColors.contentColor,
-                                        width: 5)),
+                                enabledBorder: enabledBorder,
+                                focusedBorder: focusedBorder,
                                 hintText: AppLocalizations.of(context)!
                                     .enter_name_title),
                             textAlign: TextAlign.center,
                             cursorColor: AppColors.contentColor,
-                            style: const TextStyle(fontSize: 36)),
+                            style: nameTextStyle),
                       );
                     } else {
                       return Text(

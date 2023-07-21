@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:munchkin_notebook1/features/choose_gender_page/presentation/controllers/gender.dart';
 
 class Player {
   Player(
@@ -34,3 +33,5 @@ class Player {
         id: id,
       );
 }
+
+enum Gender { male, female }
