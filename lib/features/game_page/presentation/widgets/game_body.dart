@@ -3,6 +3,8 @@ import 'package:munchkin_notebook1/features/game/domain/entities/player.dart';
 import 'package:munchkin_notebook1/features/game_page/presentation/widgets/player_item.dart';
 
 class GameBody extends StatelessWidget {
+  static const itemPadding = EdgeInsets.symmetric(vertical: 10);
+
   const GameBody({super.key, required this.players});
 
   final List<Player> players;
@@ -12,12 +14,12 @@ class GameBody extends StatelessWidget {
     return ListView.builder(
         itemCount: players.length,
         prototypeItem: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10),
+          padding: itemPadding,
           child: PlayerItem(player: players.first),
         ),
         itemBuilder: (context, index) {
           return Padding(
-            padding: const EdgeInsets.symmetric(vertical: 10),
+            padding: itemPadding,
             child: PlayerItem(player: players[index]),
           );
         });

@@ -2,7 +2,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:munchkin_notebook1/features/base_page/presentation/base_page.dart';
 import 'package:munchkin_notebook1/features/game/presentation/bloc/game_bloc.dart';
 import 'package:munchkin_notebook1/core/ui/widgets/parameter_more.dart';
@@ -14,6 +13,8 @@ import 'package:munchkin_notebook1/navigation/router.gr.dart';
 
 @RoutePage()
 class ListOfPlayersPage extends StatelessWidget {
+  static const playersVerticalPadding = EdgeInsets.symmetric(vertical: 10);
+
   const ListOfPlayersPage({super.key});
 
   @override
@@ -28,8 +29,7 @@ class ListOfPlayersPage extends StatelessWidget {
                     return ListView(
                         children: state.game.getPlayers
                             .map((player) => Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 10),
+                                padding: playersVerticalPadding,
                                 child: ParameterMore(
                                     body: ParameterText(player.name))))
                             .toList());

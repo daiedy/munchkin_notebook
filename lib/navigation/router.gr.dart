@@ -12,8 +12,6 @@ import 'package:auto_route/auto_route.dart' as _i13;
 import 'package:flutter/material.dart' as _i14;
 import 'package:munchkin_notebook1/features/choose_color_page/presentation/pages/choose_color_page.dart'
     as _i2;
-import 'package:munchkin_notebook1/features/choose_gender_page/presentation/controllers/gender.dart'
-    as _i15;
 import 'package:munchkin_notebook1/features/choose_gender_page/presentation/pages/choose_gender_page.dart'
     as _i3;
 import 'package:munchkin_notebook1/features/create_game_page/presentation/pages/create_game_page.dart'
@@ -23,7 +21,7 @@ import 'package:munchkin_notebook1/features/enter_code_page/presentation/pages/e
 import 'package:munchkin_notebook1/features/enter_name_page/presentation/pages/enter_name_page.dart'
     as _i6;
 import 'package:munchkin_notebook1/features/game/domain/entities/player.dart'
-    as _i16;
+    as _i15;
 import 'package:munchkin_notebook1/features/game_options_page/presentation/pages/game_options_page.dart'
     as _i7;
 import 'package:munchkin_notebook1/features/game_page/presentation/pages/game_page.dart'
@@ -358,7 +356,7 @@ class MaxLevelRoute extends _i13.PageRouteInfo<void> {
 class PlayerRoute extends _i13.PageRouteInfo<PlayerRouteArgs> {
   PlayerRoute({
     _i14.Key? key,
-    required _i16.Player player,
+    required _i15.Player player,
     List<_i13.PageRouteInfo>? children,
   }) : super(
           PlayerRoute.name,
@@ -383,7 +381,7 @@ class PlayerRouteArgs {
 
   final _i14.Key? key;
 
-  final _i16.Player player;
+  final _i15.Player player;
 
   @override
   String toString() {

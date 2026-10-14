@@ -12,6 +12,12 @@ class ColorPicker extends StatefulWidget {
 }
 
 class _ColorPickerState extends State<ColorPicker> {
+  static const gridDelegate = SliverGridDelegateWithFixedCrossAxisCount(
+    crossAxisCount: 5,
+    crossAxisSpacing: 10,
+    mainAxisSpacing: 10,
+  );
+
   late int _currentColorIndex;
 
   @override
@@ -28,11 +34,7 @@ class _ColorPickerState extends State<ColorPicker> {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 5,
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 10,
-        ),
+        gridDelegate: gridDelegate,
         itemCount: widget.controller.getTotalColors,
         itemBuilder: (context, index) => ColorButton(
               color: widget.controller.getColor(index),

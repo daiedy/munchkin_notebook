@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ColorButton extends StatelessWidget {
+  static const double iconSize = 35;
+
   const ColorButton(
       {super.key,
       required this.color,
@@ -20,7 +22,7 @@ class ColorButton extends StatelessWidget {
           child: selected
               ? const Icon(
                   Icons.check,
-                  size: 35,
+                  size: iconSize,
                 )
               : null),
     );

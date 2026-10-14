@@ -17,6 +17,8 @@ class EnterCodePage extends StatefulWidget {
 }
 
 class _EnterCodePageState extends State<EnterCodePage> {
+  static const double gameCodeVerticalPadding = 40;
+
   final TextEditingController _gameCodeController = TextEditingController();
 
   @override
@@ -32,7 +34,8 @@ class _EnterCodePageState extends State<EnterCodePage> {
         title: AppLocalizations.of(context)!.enter_code_title,
         body: Column(children: [
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 40),
+            padding:
+                const EdgeInsets.symmetric(vertical: gameCodeVerticalPadding),
             child: GameCodeInput(
               gameCodeController: _gameCodeController,
             ),

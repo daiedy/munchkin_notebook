@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
 class ParameterText extends StatelessWidget {
+  static const double fontSize = 20;
+  static const textStyle =
+      TextStyle(fontWeight: FontWeight.bold, fontSize: fontSize);
+
   const ParameterText(this.text, {super.key});
 
   final String text;
@@ -9,7 +13,7 @@ class ParameterText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+      style: textStyle,
     );
   }
 }

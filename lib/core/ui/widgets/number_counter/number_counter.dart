@@ -5,6 +5,9 @@ import 'package:munchkin_notebook1/core/ui/widgets/number_counter/triangle_clipp
 import 'package:munchkin_notebook1/core/ui/widgets/number_text.dart';
 
 class NumberCounter extends StatelessWidget {
+  static const double imageLeftPadding = 15;
+  static const double numberHorizontalPadding = 15;
+
   const NumberCounter(
       {super.key,
       required this.decrement,
@@ -26,12 +29,13 @@ class NumberCounter extends StatelessWidget {
             onPress: decrement, triangleDirection: TriangleDirection.left),
         imgPath != null
             ? Padding(
-                padding: const EdgeInsets.only(left: 15),
+                padding: const EdgeInsets.only(left: imageLeftPadding),
                 child: SvgPicture.asset(imgPath!),
               )
             : Container(),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15),
+          padding:
+              const EdgeInsets.symmetric(horizontal: numberHorizontalPadding),
           child: NumberText(number),
         ),
         TriangleButton(

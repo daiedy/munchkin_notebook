@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:munchkin_notebook1/features/choose_gender_page/presentation/controllers/gender_controller.dart';
 import 'package:munchkin_notebook1/features/choose_gender_page/presentation/widgets/gender_button.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
-import '../controllers/gender.dart';
+import '../../../game/domain/entities/player.dart';
 
 class GenderButtonsGroup extends StatefulWidget {
   const GenderButtonsGroup({super.key, required this.controller});
@@ -15,6 +14,8 @@ class GenderButtonsGroup extends StatefulWidget {
 }
 
 class _GenderButtonsGroupState extends State<GenderButtonsGroup> {
+  static const double buttonHorizontalPadding = 30;
+
   late Gender _currentGender;
 
   @override
@@ -34,7 +35,8 @@ class _GenderButtonsGroupState extends State<GenderButtonsGroup> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30),
+          padding:
+              const EdgeInsets.symmetric(horizontal: buttonHorizontalPadding),
           child: GenderButton(
             logoPath: AppLocalizations.of(context)!.maleLogo,
             selected: _currentGender == Gender.male,
@@ -44,7 +46,8 @@ class _GenderButtonsGroupState extends State<GenderButtonsGroup> {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30),
+          padding:
+              const EdgeInsets.symmetric(horizontal: buttonHorizontalPadding),
           child: GenderButton(
             logoPath: AppLocalizations.of(context)!.femaleLogo,
             selected: _currentGender == Gender.female,

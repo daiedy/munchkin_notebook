@@ -4,12 +4,13 @@ import 'package:munchkin_notebook1/features/base_page/presentation/base_page.dar
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:munchkin_notebook1/features/choose_color_page/presentation/controllers/color_picker_controller.dart';
 import 'package:munchkin_notebook1/features/choose_color_page/presentation/widgets/color_picker.dart';
-import 'package:munchkin_notebook1/features/choose_gender_page/presentation/controllers/gender.dart';
 import 'package:munchkin_notebook1/features/game/presentation/bloc/game_bloc.dart';
 import 'package:munchkin_notebook1/core/ui/widgets/primary_button.dart';
 import 'package:munchkin_notebook1/core/ui/widgets/secondary_button.dart';
 import 'package:munchkin_notebook1/main.dart';
 import 'package:munchkin_notebook1/navigation/router.gr.dart';
+
+import '../../../game/domain/entities/player.dart';
 
 @RoutePage()
 class ChooseColorPage extends StatelessWidget {
@@ -24,6 +25,7 @@ class ChooseColorPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BasePage(
         title: AppLocalizations.of(context)!.choose_color_title,
+        //TODO: исправить чтобы нормально отображалось
         body: SizedBox(
           height: 550,
           child: ColorPicker(controller: _colorController),

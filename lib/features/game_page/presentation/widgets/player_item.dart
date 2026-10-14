@@ -8,6 +8,9 @@ import 'package:munchkin_notebook1/core/ui/widgets/parameter_text.dart';
 import 'package:munchkin_notebook1/navigation/router.gr.dart';
 
 class PlayerItem extends StatelessWidget {
+  static const double playerNamePadding = 5;
+  static const iconHorizontalPadding = EdgeInsets.symmetric(horizontal: 15);
+
   const PlayerItem({super.key, required this.player});
 
   final Player player;
@@ -23,7 +26,7 @@ class PlayerItem extends StatelessWidget {
         children: [
           ParameterText(player.name),
           const SizedBox(
-            height: 5,
+            height: playerNamePadding,
           ),
           Row(
             children: [
@@ -31,7 +34,7 @@ class PlayerItem extends StatelessWidget {
                   iconPath: AppLocalizations.of(context)!.level_icon,
                   value: player.level),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15),
+                padding: iconHorizontalPadding,
                 child: IconParameter(
                     iconPath: AppLocalizations.of(context)!.bonus_icon,
                     value: player.bonus),

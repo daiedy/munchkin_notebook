@@ -12,6 +12,8 @@ import 'package:munchkin_notebook1/navigation/router.gr.dart';
 
 @RoutePage()
 class GameOptionsPage extends StatelessWidget {
+  static const parametersPadding = EdgeInsets.symmetric(vertical: 10);
+
   const GameOptionsPage({super.key});
 
   @override
@@ -25,7 +27,7 @@ class GameOptionsPage extends StatelessWidget {
                 if (state is GameCreated) {
                   return Column(children: [
                     Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      padding: parametersPadding,
                       child: Row(
                         children: [
                           ParameterText(
@@ -38,7 +40,7 @@ class GameOptionsPage extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      padding: parametersPadding,
                       child: ParameterMore(
                         body: ParameterText(AppLocalizations.of(context)!
                             .players_number(
@@ -50,14 +52,14 @@ class GameOptionsPage extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      padding: parametersPadding,
                       child: ParameterMore(
                         body: ParameterText(AppLocalizations.of(context)!
                             .max_level(state.game.maxLevel.toString())),
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      padding: parametersPadding,
                       child: ParameterMore(
                         body: ParameterText(state.game.selfCounting
                             ? AppLocalizations.of(context)!.self_counting

@@ -1,7 +1,5 @@
-import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:meta/meta.dart';
-import 'package:munchkin_notebook1/features/choose_gender_page/presentation/controllers/gender.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:munchkin_notebook1/features/game/domain/entities/game.dart';
 import 'package:munchkin_notebook1/features/game/domain/entities/player.dart';
 

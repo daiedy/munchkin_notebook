@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ParameterMore extends StatelessWidget {
+  static const double iconSize = 25;
+
   const ParameterMore({super.key, required this.body, this.onPress});
 
   final Widget body;

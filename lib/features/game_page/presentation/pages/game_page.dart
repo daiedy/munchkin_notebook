@@ -11,6 +11,8 @@ import 'package:munchkin_notebook1/navigation/router.gr.dart';
 
 @RoutePage()
 class GamePage extends StatelessWidget {
+  static const double gameButtonSize = 50;
+
   const GamePage({super.key});
 
   @override
@@ -39,7 +41,7 @@ class GamePage extends StatelessWidget {
             },
             child: const Icon(
               Icons.more_horiz,
-              size: 50,
+              size: gameButtonSize,
             )));
   }
 }
